@@ -1,0 +1,39 @@
+.animation-container {
+	text-align: center;
+	margin: 5px;
+	padding: 25px;
+	background-color: rgb(232, 232, 238);
+	width: 200px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	position: relative; /* Make this container the reference for positioning */
+  }
+  
+  .animation-toggle-icon {
+	position: absolute; /* Fix the icon in the top corner */
+	top: 10px;
+	right: 10px;
+	width: 30px; /* Adjust the size of the icon as needed */
+	height: 30px;
+	cursor: pointer;
+  }
+  
+  .animation {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	background-color: #007bff;
+	color: white;
+	border-radius: 5px;
+  }
+  
+  .animationBox{
+	background-color: rgb(136, 199, 233);
+	padding: 5px;
+	border-radius: 5px;
+
+  }
+

@@ -1,0 +1,26 @@
+.animation-list {
+	display: flex;
+	flex-direction: row; /* Align items in a row */
+	flex-wrap: wrap; /* Allow items to wrap to the next row when needed */
+	justify-content: center; /* Center items horizontally */
+	align-items: center; /* Center items vertically */
+	gap: 15px; /* Add some space between each animation box */
+	max-width: 60%;
+	max-height: 500px;
+	overflow-y: scroll;
+	margin-right: auto;
+	border-radius: 5px;
+
+  }
+
+#animationLoader {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+	max-width: 95%;
+	padding: 30px; 
+
+}
+  
+
