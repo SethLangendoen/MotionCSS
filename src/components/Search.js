@@ -14,16 +14,16 @@ const Search = ({ categories, onCategorySelect }) => {
 
   return (
     <div className="search-container">
-		<div id = 'logoTitle'>
+	  <div id = 'logoTitle' className='scaleFadeSlideInUp'>
 		<img src = {motionLogo} alt='CSS Library Logo' id='logoImg'></img>
       <h1 id = 'title'>MotionCSS</h1>
 	  </div>
 
-      <p>
+      <p className='scaleFadeSlideInUp'>
         Discover and download high-quality CSS animations to enhance your website's design. 
       </p>
 
-      <div className="category-buttons">
+      <div className="category-buttons scaleFadeSlideInUp">
         {/* Radio button for "All" category */}
         <input
           type="radio"

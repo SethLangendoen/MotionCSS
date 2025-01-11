@@ -44,10 +44,10 @@ const AnimationLoader = ({ selectedCategory }) => {
   };
 
   return (
-	<div>
+	<div id='animations-section'>
 
     <div id="animationLoader">
-      <div className="animation-list">
+      <div className="animation-list slideInRight">
         {animations.map((animation, index) => (
           <AnimationContainer
             key={index}
@@ -57,13 +57,11 @@ const AnimationLoader = ({ selectedCategory }) => {
           />
         ))}
       </div>
+	<AnimationSettings
+		animation={selectedAnimation}
+		onSettingsChange={setSelectedAnimation} 
+	/>
 
-      {selectedAnimation && (
-        <AnimationSettings
-          animation={selectedAnimation}
-          onSettingsChange={setSelectedAnimation} 
-        />
-      )}
 	</div>
 	{selectedAnimation && (
 	<AnimationIntegration animation={selectedAnimation} />

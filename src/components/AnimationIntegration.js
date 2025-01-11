@@ -20,21 +20,13 @@ const AnimationIntegration = ({ animation }) => {
         <p>Now, apply the animation to an element using the following class:</p>
         <pre>
           <code className="language-css">{`
-.${animation.name} {
+.animation-${animation.name} {
   animation: ${animation.name} ${animation.duration} ${animation.timingFunction} ${animation.iterationCount};
 }
           `}</code>
         </pre>
 
-        <h3>Step 3: Customize Options</h3>
-        <p>Here are the customizable options for the animation:</p>
-        <ul>
-          <li><strong>Duration:</strong> Adjust how long the animation lasts (e.g., '1s', '500ms').</li>
-          <li><strong>Timing Function:</strong> Choose the speed curve of the animation (e.g., 'ease-in-out', 'linear').</li>
-          <li><strong>Iteration Count:</strong> Set how many times the animation should run (e.g., 'infinite', '1').</li>
-        </ul>
-
-        <h3>Step 4: Use the Animation in Your HTML</h3>
+        <h3>Step 3: Use the Animation in Your HTML</h3>
         <p>Finally, add the animation class to an element:</p>
         <pre>
           <code className="language-html">{`
@@ -44,7 +36,7 @@ const AnimationIntegration = ({ animation }) => {
           `}</code>
         </pre>
 
-        <h3>Step 5: Dynamically Toggle the Animation Using JavaScript</h3>
+        <h3>Step 4 (optional): Dynamically Toggle the Animation Using JavaScript</h3>
         <p>You can use JavaScript to dynamically add or remove the animation class from an element. This allows you to trigger the animation when certain events occur (e.g., button click, page load, etc.). Here’s how you can do it:</p>
         <pre>
           <code className="language-js">{`
@@ -69,7 +61,7 @@ const AnimationIntegration = ({ animation }) => {
           `}</code>
         </pre>
 
-        <h3>Step 6: Other Ways to Dynamically Toggle the Animation</h3>
+        <h3>Step 5: Other Ways to Dynamically Toggle the Animation</h3>
         <p>Here are some additional ways you can toggle the animation class based on user interactions:</p>
 
         <h4>1. Toggle on Hover:</h4>

@@ -1,0 +1,166 @@
+.blog-list {
+	padding: 10%;
+	padding-top: 0px;
+  }
+  
+  .blog-previews {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust columns based on screen size */
+	gap: 20px; /* Adds space between the preview cards */
+  }
+  
+  .blog-preview {
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+	height: 350px; /* Fixed height for the previews */
+  }
+  
+  .blog-preview:hover {
+	transform: scale(1.05); /* Slight zoom effect */
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds a soft shadow on hover */
+  }
+  
+  .blog-preview img {
+	width: 100%;
+	height: 150px; /* Fixed height for the image */
+	object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  .blog-preview h3 {
+	color: #333;
+	font-size: 1.25rem;
+	margin: 10px 0;
+  }
+  
+  .blog-preview p {
+	color: #666;
+	font-size: 1rem;
+	margin: 0 10px 10px 10px;
+  }
+  
+  .blog-preview small {
+	color: #999;
+	font-size: 0.9rem;
+	margin-left: 10px;
+  }
+  
+  .blog-content {
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Static background shadow */
+	padding: 50px;
+	border-radius: 0px;
+	max-width: 900px;
+	margin: 0 auto;
+	margin-top: 100px; 
+	margin-bottom: 100px; 
+
+  }
+
+  .blog-content p {
+	font-size: 1.3rem;
+  }
+
+  .blog-content > div {
+	text-align: left;
+	padding-left: 40px;
+	padding-right: 40px;
+  }
+
+  .blog-content > h2 {
+	text-align: left; /* Align the title to the left */
+	font-size: 4rem; /* Adjust the font size */
+	font-weight: bold; /* Make the title bold */
+	color: white; /* Change the text color */
+	margin-top: 0; /* Remove any default margin at the top */
+	margin-bottom: 20px; /* Add some space below the title */
+	line-height: 1.3; /* Adjust line height for better spacing */
+	font-family: 'Arial', sans-serif; /* Customize the font family */
+	padding: 30px;
+	text-shadow: 4px 4px 10px #007bff;
+  }
+  
+  
+  .selected-blog-content {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	display: flex;
+	justify-content: center;
+  }
+  
+  .selected-blog-content.fade-in {
+	opacity: 1;
+  }
+  
+  .back-button {
+	background-color: #3887dd;
+	color: #fff;
+	padding: 8px 12px;
+	font-size: 1rem;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-bottom: 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+  }
+
+
+
+  @keyframes borderBoxShadowShake {
+	0% {     transform: translateX(0px) translateY(0px); background-color: #3887dd; box-shadow: 0 0 3px rgba(0, 0, 0, 0); } 100% {     transform: translateX(2px) translateY(-2px);background-color: #143d68; box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5); } 
+  }
+  
+  .borderBoxShadowShake {
+	animation: borderBoxShadowShake .2s ease-in-out 1 forwards;
+  }
+  
+  
+  .blog-preview.hidden {
+	display: none; /* Hide the previews when a blog is selected */
+  }
+
+  @keyframes fadeSlideUp {
+	0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fadeSlideUp {
+	animation: fadeSlideUp 1s ease-out 1 forwards;
+  }
+  
+  @keyframes slideRightFadeScale {
+	0% { transform: translateX(100%) scale(0.5); opacity: 0; } 100% { transform: translateX(0) scale(1); opacity: 1; }
+  }
+  
+  .slideRightFadeScale {
+	animation: slideRightFadeScale .3s ease-in-out 1 forwards;
+  }
+
+  @keyframes slideLeftFadeScale {
+	0% { transform: translateX(-100%) scale(0.5); opacity: 0; } 100% { transform: translateX(0) scale(1); opacity: 1; }
+  }
+  
+  .slideLeftFadeScale {
+	animation: slideLeftFadeScale .3s ease-in-out 1 forwards;
+  }
+
+  @keyframes scaleBounceFadeOutSlideDown {
+	0% { transform: translateY(0) scale(1); opacity: 1; } 50% { transform: translateY(-15px) scale(1.1); opacity: 0.7; } 100% { transform: translateY(100%) scale(0.7); opacity: 0; }
+  }
+  
+  .scaleBounceFadeOutSlideDown {
+	animation: scaleBounceFadeOutSlideDown 1s ease-in-out 1 forwards;
+  }
+
+  @keyframes scaleFadeSlideInUp {
+	0% { transform: scale(0.5) translateY(300%); opacity: 0; } 30% { transform: scale(0.7) translateY(0); opacity: 0.7; } 100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+  
+  .scaleFadeSlideInUp {
+	animation: scaleFadeSlideInUp 1s ease-in-out 1 forwards;
+  }

@@ -4,9 +4,9 @@
 	margin-top: 5px;
 	background-color: #f9f9f9;
 	border-radius: 20px;
-	max-width: 30%;
-	min-width: 30%;
-	background-color: rgb(232, 232, 232);
+	max-width: 35%;
+	min-width: 35%;
+	background-color: rgb(246, 246, 246);
   }
   
   .animation-settings h2 {
@@ -36,20 +36,31 @@
 	max-height: 400px;
 	overflow-y: scroll;
   }
+
+
   
   code {
 	font-size: 1rem;
 	color: #333;
   }
 
-  #settingsTitle{
+
+  #settingsTitle {
 	display: flex;
-	flex-direction: row;
+	flex-direction: row; /* Default is row */
 	align-items: center;
 	justify-content: space-between;
-	padding: 0 20px; 
+	padding: 0 20px;
   }
-
+  
+  @media (max-width: 700px) {
+	#settingsTitle {
+	  flex-direction: column; /* Switch to column layout when the width is less than 600px */
+	  align-items: center; /* Align items to the start when in column mode */
+	  justify-content: center; /* Ensure the content is stacked properly */
+	}
+  }
+  
   
   .copy-button {
 	margin-left: 10px;

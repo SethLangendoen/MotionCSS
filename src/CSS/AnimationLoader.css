@@ -10,7 +10,6 @@
 	overflow-y: scroll;
 	margin-right: auto;
 	border-radius: 5px;
-
   }
 
 #animationLoader {
@@ -23,4 +22,18 @@
 
 }
   
+@keyframes slideInRight {
+	0% { transform: translateX(-100%); } 100% { transform: translateX(0); }
+  }
+  
+  .slideInRight {
+	animation: slideInRight 1s ease-out 1;
+  }
 
+  @keyframes slideInLeft {
+	0% { transform: translateX(100%); } 100% { transform: translateX(0); }
+  }
+  
+  .slideInLeft {
+	animation: slideInLeft 1s ease-out 1;
+  }

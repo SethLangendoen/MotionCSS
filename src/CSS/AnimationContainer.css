@@ -2,7 +2,7 @@
 	text-align: center;
 	margin: 5px;
 	padding: 25px;
-	background-color: rgb(232, 232, 238);
+	background-color: rgb(246, 246, 246);
 	width: 200px;
 	height: 150px;
 	display: flex;
@@ -31,7 +31,8 @@
   }
   
   .animationBox{
-	background-color: rgb(136, 199, 233);
+	background-color: transparent;
+	border: 2px solid black;
 	padding: 5px;
 	border-radius: 5px;
 

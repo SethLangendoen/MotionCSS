@@ -20,6 +20,8 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	margin-top: 80px; 
+
   }
   #logoImg{
 	width: 80px; 
@@ -115,4 +117,11 @@
 	outline-offset: 2px;
   }
   
+  @keyframes scaleFadeSlideInUp {
+	0% { transform: scale(0.5) translateY(300%); opacity: 0; } 30% { transform: scale(0.7) translateY(0); opacity: 0.7; } 100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
   
+  .scaleFadeSlideInUp {
+	animation: scaleFadeSlideInUp 1s ease-in-out 1 forwards;
+  }
+
