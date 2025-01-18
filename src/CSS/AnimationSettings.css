@@ -83,3 +83,16 @@
 	font-size: 14px;
   }
   
+  @media (max-width: 768px) {
+	.animation-settings {
+		padding: 15px;
+		background-color: #f9f9f9;
+		border-radius: 20px;
+		max-width: 100%;
+		background-color: rgb(246, 246, 246);
+		box-sizing: border-box;
+		margin: 0 auto; 
+		margin-top: 20px;
+
+	  }
+  }

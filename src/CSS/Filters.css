@@ -1,0 +1,96 @@
+/* Filters container */
+.filters {
+	display: flex;
+	justify-content: space-between; /* Space between each filter */
+	align-items: center; /* Vertically align the filters */
+	gap: 20px; /* Space between the filters */
+	flex-wrap: wrap; /* Allow filters to wrap on smaller screens */
+	margin-bottom: 20px; /* Space below the filters */
+	max-width: 800px;
+	margin: 0 auto;
+  }
+  
+  /* Filter item (each individual filter) */
+  .filter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%; /* Full width on small screens */
+	max-width: 250px; /* Limit width on larger screens */
+  }
+  
+  /* Label styles */
+  .filter label {
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: 500;
+  }
+  
+  /* Input (range and select) styles */
+  .filter input,
+  .filter select {
+	width: 100%;
+	max-width: 200px; /* Set a maximum width */
+	padding: 4px;
+	padding-left: 0;
+	padding-right: 0;
+	font-size: 14px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+  }
+  
+  /* Adjust the range slider to look better */
+  .filter input[type="range"] {
+	-webkit-appearance: none; /* Remove default styling in some browsers */
+	appearance: none;
+	height: 0px; /* Reduced height of the slider */
+	background: rgb(255, 255, 255);
+	border-radius: 5px;
+	outline: none;
+	transition: background 0.3s ease;
+  }
+  
+  .filter input[type="range"]:hover {
+	background: rgb(239, 239, 239);
+  }
+  
+  .filter input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #007bff;
+	cursor: pointer;
+  }
+  
+  .filter input[type="range"]::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #007bff;
+	cursor: pointer;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+	.filters {
+	  flex-direction: column; /* Stack filters vertically on smaller screens */
+	  align-items: flex-start; /* Align to the left */
+	}
+  
+	.filter {
+	  width: 100%; /* Full width on smaller screens */
+	  max-width: none;
+	}
+  }
+  
+  @keyframes scaleUpFadeInSlideUp {
+	0% { transform: translateY(100%) scale(0.5); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; }
+  }
+  
+  .scaleUpFadeInSlideUp {
+	animation: scaleUpFadeInSlideUp 1s ease-out 1;
+  }

@@ -13,14 +13,21 @@ const Navbar = () => {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
   const handleLinkClick = (id) => {
-    if (location.pathname !== '/') {
-      // Navigate to the home page first if not already there
-      navigate('/');
-      // Wait for navigation to complete, then scroll to the section
-      setTimeout(() => scrollToSection(id), 50); // Small delay to ensure the home page is rendered
-    } else {
+	if (id === '/advanced/') {
+	  navigate(id);
+
+	} else if (id === '/blog/'){
+		navigate('/blog/the-future-of-web-animations');
+	}
+	else if (location.pathname !== '/') {
+		// Navigate to the home page first if not already there
+		navigate('/');
+		// Wait for navigation to complete, then scroll to the section
+		setTimeout(() => scrollToSection(id), 50); // Small delay to ensure the home page is rendered
+	}
+	
+	else {
       // If already on the home page, scroll directly
       scrollToSection(id);
     }
@@ -45,7 +52,7 @@ const Navbar = () => {
           Animations
         </a>
 
-        <a
+        {/* <a
           href="#how-to-section"
           onClick={(e) => {
             e.preventDefault();
@@ -53,17 +60,27 @@ const Navbar = () => {
           }}
         >
           How To
+        </a> */}
+				<a
+          href=".advanced-container"
+          onClick={(e) => {
+            e.preventDefault();
+            handleLinkClick('/advanced/');
+          }}
+        >
+          Components 
         </a>
 
         <a
           href="#blog-section"
           onClick={(e) => {
             e.preventDefault();
-            handleLinkClick('blog-section');
+            handleLinkClick('/blog/');
           }}
         >
           Blog
         </a>
+
       </div>
     </nav>
   );

@@ -1,0 +1,498 @@
+[
+	{
+		"name": "flipCard",
+		"html": "<div class=\"animation-flipCard\"><div class=\"flip-card-inner\"><div class=\"flip-card-front\">Front</div><div class=\"flip-card-back\">Back</div></div></div>",
+		"css": ".animation-flipCard { width: 200px; height: 300px; perspective: 1000px; margin: 0 auto; } .flip-card-inner { width: 100%; height: 100%; position: absolute; transform-style: preserve-3d; transition: transform 0.6s; transform-origin: center; } .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; justify-content: center; align-items: center; font-size: 24px; color: white; } .flip-card-front { background-color: #3498db; } .flip-card-back { background-color: #f39c12; transform: rotateY(180deg); } .animation-flipCard:hover .flip-card-inner { transform: rotateY(180deg); }",
+		"js": "document.querySelector('.animation-flipCard').addEventListener('click', () => { console.log('Flip card clicked!'); });",
+		"description": "A card that flips on hover with a 3D effect"
+	  },  
+	{
+		"name": "loadingSpinner",
+		"html": "<div class=\"animation-loadingSpinner\"></div>",
+		"css": "@keyframes rotateSpinner { \n  0% { transform: rotate(0deg); } \n  100% { transform: rotate(360deg); } \n} \n.animation-loadingSpinner { \n  width: 50px; \n  height: 50px; \n  border: 6px solid #f3f3f3; \n  border-top: 6px solid #3498db; \n  border-radius: 50%; \n  animation: rotateSpinner 1.5s linear infinite; \n  margin: 0 auto; \n}",
+		"js": "document.querySelector('.animation-loadingSpinner').addEventListener('click', () => { \n  console.log('Loading spinner clicked!'); \n});",
+		"description": "A circular loading spinner with rotating animation"
+	  },
+	  {
+		"name": "loadingDots",
+		"html": "<div class=\"bouncing-dots\">\n  <div class=\"dot\"></div>\n  <div class=\"dot\"></div>\n  <div class=\"dot\"></div>\n</div>",
+		"css": ".bouncing-dots { \n  display: flex; \n  justify-content: space-between; \n  width: 50px; \n  margin: auto; \n} \n.dot { \n  width: 10px; \n  height: 10px; \n  border-radius: 50%; \n  background-color: #3498db; \n  animation: bounce 0.6s infinite alternate; \n} \n.dot:nth-child(1) { \n  animation-delay: 0s; \n} \n.dot:nth-child(2) { \n  animation-delay: 0.2s; \n} \n.dot:nth-child(3) { \n  animation-delay: 0.4s; \n} \n@keyframes bounce { \n  0% { transform: translateY(0); } \n  100% { transform: translateY(-20px); } \n}",
+		"js": "",
+		"description": "Three dots bouncing up and down"
+	  },
+	  {
+		"name": "threeDotsLoading",
+		"html": "<div class=\"three-dots\">\n  <div class=\"dot\"></div>\n  <div class=\"dot\"></div>\n  <div class=\"dot\"></div>\n</div>",
+		"css": ".three-dots { \n  display: flex; \n  justify-content: space-between; \n  width: 60px; \n  margin: auto; \n} \n.dot { \n  width: 12px; \n  height: 12px; \n  border-radius: 50%; \n  background-color: #3498db; \n  animation: pulse 1.2s infinite ease-in-out; \n} \n.dot:nth-child(1) { \n  animation-delay: 0s; \n} \n.dot:nth-child(2) { \n  animation-delay: 0.4s; \n} \n.dot:nth-child(3) { \n  animation-delay: 0.8s; \n} \n@keyframes pulse { \n  0%, 100% { transform: scale(1); } \n  50% { transform: scale(1.4); } \n}",
+		"js": "",
+		"description": "Three dots pulsing in and out with delay"
+	  },
+	  {
+		"name": "waveLoading",
+		"html": "<div class=\"wave-loading\">\n  <div class=\"block\"></div>\n  <div class=\"block\"></div><div class=\"block\"></div>\n</div>",
+		"css": "@keyframes wave { \n  0%, 100% { transform: translateY(0); } \n  50% { transform: translateY(-20px); } \n} \n.wave-loading { \n  display: flex; \n  justify-content: space-between; \n  width: 80px; \n  height: 20px; \n} \n.block { \n  width: 20px; \n  height: 20px; \n  background-color: #3498db; \n  animation: wave 1s ease-in-out infinite; \n} \n.block:nth-child(1) { \n  animation-delay: 0s; \n} \n.block:nth-child(2) { \n  animation-delay: 0.2s; \n} \n.block:nth-child(3) { \n  animation-delay: 0.4s; \n}",
+		"js": "",
+		"description": "Three blocks moving in a wave-like motion"
+	  },
+	  {
+		"name": "bouncingBallLoading",
+		"html": "<div class=\"bouncing-ball\">\n  <div class=\"ball\"></div>\n</div>",
+		"css": "@keyframes bounceBall { \n  0%, 20%, 50%, 80%, 100% { transform: translateY(0); } \n  40% { transform: translateY(-30px); } \n  60% { transform: translateY(-15px); } \n} \n.bouncing-ball { \n  width: 40px; \n  height: 40px; \n  display: flex; \n  justify-content: center; \n  align-items: center; \n  position: relative; \n} \n.ball { \n  width: 20px; \n  height: 20px; \n  border-radius: 50%; \n  background-color: #3498db; \n  animation: bounceBall 1.5s ease-in-out infinite; \n}",
+		"js": "",
+		"description": "A ball bouncing up and down in the container"
+	  },
+	  {
+		"name": "conicGradientLoading",
+		"html": "<div class=\"animation-conicGradientLoader\"></div>",
+		"css": ".animation-conicGradientLoader { \n  width: 50px; \n  padding: 8px; \n  aspect-ratio: 1; \n  border-radius: 50%; \n  background: #3498db; \n  --_m: conic-gradient(#0000 10%,#000), linear-gradient(#000 0 0) content-box; \n  -webkit-mask: var(--_m); \n  mask: var(--_m); \n  -webkit-mask-composite: source-out; \n  mask-composite: subtract; \n  animation: l3 1s infinite linear; \n} \n@keyframes l3 { \n  to { transform: rotate(1turn); } \n}",
+		"description": "A rotating loader with a conic gradient mask effect"
+	  },
+	  {
+		"name": "progressLoading",
+		"html": "<div class=\"animation-progressLoader3\"></div>",
+		"css": ".animation-progressLoader3 { \n  width: 120px; \n  height: 10px; \n  border-radius: 8px; \n  background: #1f77b4; \n  position: relative; \n  overflow: hidden; \n} \n.animation-progressLoader3::before { \n  content: ''; \n  position: absolute; \n  top: 0; \n  left: -100%; \n  width: 100%; \n  height: 100%; \n  background-color: #1565c0; \n  animation: progress3 2s infinite linear; \n} \n@keyframes progress3 { \n  0% { left: -100%; } \n  100% { left: 100%; } \n}",
+		"description": "A progress bar with a sliding effect moving from left to right"
+	  },	  
+	  		
+	  {
+		"name": "radioButtonCircular",
+		"html": "<div class=\"animation-radioButtonCircular\"> <label> <input type=\"radio\" name=\"circular-radio\" value=\"circle1\" /> <span class=\"circle\"></span> </label> <label> <input type=\"radio\" name=\"circular-radio\" value=\"circle2\" /> <span class=\"circle\"></span> </label> <label> <input type=\"radio\" name=\"circular-radio\" value=\"circle3\" /> <span class=\"circle\"></span> </label> </div>",
+		"css": ".animation-radioButtonCircular { display: flex; gap: 15px; } .animation-radioButtonCircular input[type='radio'] { display: none; } .circle { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #ccc; display: inline-block; transition: background-color 0.3s ease, border-color 0.3s ease; cursor: pointer; } .animation-radioButtonCircular input[type='radio']:checked + .circle { background-color: #3498db; border-color: #2980b9; }",
+		"js": "",
+		"description": "Circular radio buttons with a colored fill when selected."
+	  },
+	  {
+		"name": "radioProgressSteps",
+		"html": "<div class=\"animation-radioProgressSteps\"> <label> <input type=\"radio\" name=\"progress-radio\" value=\"step1\" /> <span class=\"step\">1</span> </label> <label> <input type=\"radio\" name=\"progress-radio\" value=\"step2\" /> <span class=\"step\">2</span> </label> <label> <input type=\"radio\" name=\"progress-radio\" value=\"step3\" /> <span class=\"step\">3</span> </label> </div>",
+		"css": ".animation-radioProgressSteps { display: flex; gap: 20px; } .animation-radioProgressSteps input[type='radio'] { display: none; } .step { width: 40px; height: 40px; border-radius: 50%; background-color: #eee; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; border: 2px solid #ddd; transition: background-color 0.3s ease, border-color 0.3s ease; } .animation-radioProgressSteps input[type='radio']:checked + .step { background-color: #3498db; color: white; border-color: #2980b9; }",
+		"js": "",
+		"description": "Radio buttons styled as progress steps."
+	  },							  
+
+
+	  {
+		"name": "Classic Hover Menu",
+		"description": "A classic menu with a subtle hover effect and smooth background color transitions.",
+		"html": "<nav class=\"classic-menu\">\n  <ul>\n    <li><a href=\"#\">Home</a></li>\n    <li><a href=\"#\">About</a></li>\n    <li><a href=\"#\">Services</a></li>\n    <li><a href=\"#\">Contact</a></li>\n  </ul>\n</nav>",
+		"css": ".classic-menu {\n  background-color: #333;\n  padding: 10px 20px;\n  text-align: center;\n}\n\n.classic-menu ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  justify-content: center;\n}\n\n.classic-menu li {\n  margin: 0 20px;\n}\n\n.classic-menu a {\n  color: #fff;\n  text-decoration: none;\n  font-size: 18px;\n  padding: 10px;\n  display: block;\n  transition: background-color 0.3s ease;\n}\n\n.classic-menu a:hover {\n  background-color: #444;\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Dropdown Hover Menu",
+		"description": "A menu with a drop-down submenu that appears with a smooth sliding animation, including additional hover effects for each menu item.",
+		"html": "<nav class=\"dropdown-menu\">\n  <ul>\n    <li><a href=\"#\">Home</a></li>\n    <li class=\"dropdown\">\n      <a href=\"#\">Services</a>\n      <ul class=\"submenu\">\n        <li><a href=\"#\">Web Design</a></li>\n        <li><a href=\"#\">App Development</a></li>\n        <li><a href=\"#\">SEO</a></li>\n      </ul>\n    </li>\n    <li><a href=\"#\">About</a></li>\n    <li><a href=\"#\">Contact</a></li>\n  </ul>\n</nav>",
+		"css": ".dropdown-menu {\n  background-color: #444;\n  padding: 10px 20px;\n  text-align: center;\n}\n\n.dropdown-menu ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  justify-content: center;\n}\n\n.dropdown-menu li {\n  position: relative;\n}\n\n.dropdown-menu a {\n  color: #fff;\n  text-decoration: none;\n  font-size: 18px;\n  padding: 10px 20px;\n  display: block;\n  transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.2s ease;\n}\n\n.dropdown-menu a:hover {\n  color: #f0db4f;\n  transform: scale(1.1);\n  letter-spacing: 1.5px;\n}\n\n.dropdown-menu .submenu {\n  display: none;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  background-color: #555;\n  list-style: none;\n  margin: 0;\n  padding: 10px 0;\n  width: 200px;\n  opacity: 0;\n  transform: translateY(10px);\n  transition: opacity 0.3s ease, transform 0.3s ease;\n}\n\n.dropdown-menu .submenu li {\n  padding: 10px 20px;\n  transition: transform 0.3s ease;\n}\n\n.dropdown-menu .submenu li a {\n  color: #fff;\n  text-decoration: none;\n  font-size: 16px;\n}\n\n.dropdown-menu .submenu li a:hover {\n  color: #f0db4f;\n  text-decoration: underline;\n}\n\n.dropdown-menu .submenu li:hover {\n  transform: translateX(5px);\n}\n\n.dropdown-menu .dropdown:hover .submenu {\n  display: block;\n  opacity: 1;\n  transform: translateY(0);\n}\n\n.dropdown-menu .dropdown:hover > a {\n  color: #f0db4f;\n  transform: scale(1.05);\n}",
+		"js": ""
+	  },	  
+	  {
+		"name": "Animated Border Menu",
+		"description": "A menu with a border animation on hover that highlights the current item.",
+		"html": "<nav class=\"border-menu\">\n  <ul>\n    <li><a href=\"#\">Home</a></li>\n    <li><a href=\"#\">About</a></li>\n    <li><a href=\"#\">Services</a></li>\n    <li><a href=\"#\">Contact</a></li>\n  </ul>\n</nav>",
+		"css": ".border-menu {\n  background-color: #333;\n  padding: 10px 20px;\n}\n\n.border-menu ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  justify-content: center;\n}\n\n.border-menu li {\n  margin: 0 20px;\n  position: relative;\n}\n\n.border-menu a {\n  color: #fff;\n  text-decoration: none;\n  font-size: 18px;\n  padding: 10px 15px;\n  display: block;\n  position: relative;\n  overflow: hidden;\n}\n\n.border-menu a::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 0;\n  height: 2px;\n  background-color: #007bff;\n  transition: width 0.3s ease-in-out;\n}\n\n.border-menu a:hover::after {\n  width: 100%;\n}",
+		"js": ""
+	  },
+		
+	  {
+		"name": "Simple Footer with Social Media Icons",
+		"description": "A footer containing social media links with hover effects.",
+		"html": "<footer class=\"footer\">\n  <div class=\"footer-content\">\n    <p>&copy; 2025 Your Company. All Rights Reserved.</p>\n    <div class=\"social-icons\">\n      <a href=\"#\" class=\"icon facebook\">Facebook</a>\n      <a href=\"#\" class=\"icon twitter\">Twitter</a>\n      <a href=\"#\" class=\"icon linkedin\">LinkedIn</a>\n    </div>\n  </div>\n</footer>",
+		"css": ".footer {\n  background-color: #333;\n  color: white;\n  padding: 20px 0;\n  text-align: center;\n  position: relative;\n  bottom: 0;\n  width: 100%;\n}\n\n.footer .footer-content {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\n.footer p {\n  margin-bottom: 10px;\n  font-size: 14px;\n}\n\n.social-icons {\n  display: flex;\n  gap: 20px;\n}\n\n.social-icons .icon {\n  text-decoration: none;\n  color: white;\n  font-size: 18px;\n  transition: color 0.3s ease;\n}\n\n.social-icons .icon:hover {\n  color: #00aaff;\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Footer with Navigation Links",
+		"description": "A footer with navigation links, such as About, Privacy Policy, etc., with smooth hover effects.",
+		"html": "<footer class=\"footer\">\n  <div class=\"footer-content\">\n    <ul class=\"footer-links\">\n      <li><a href=\"#\">About Us</a></li>\n      <li><a href=\"#\">Privacy Policy</a></li>\n      <li><a href=\"#\">Terms of Service</a></li>\n      <li><a href=\"#\">Contact</a></li>\n    </ul>\n    <p>&copy; 2025 Your Company. All Rights Reserved.</p>\n  </div>\n</footer>",
+		"css": ".footer {\n  background-color: #222;\n  color: white;\n  padding: 40px 0;\n  text-align: center;\n  position: relative;\n  bottom: 0;\n  width: 100%;\n}\n\n.footer .footer-content {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.footer .footer-links {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  gap: 30px;\n  margin-bottom: 20px;\n}\n\n.footer .footer-links li {\n  font-size: 16px;\n}\n\n.footer .footer-links a {\n  text-decoration: none;\n  color: white;\n  transition: color 0.3s ease;\n}\n\n.footer .footer-links a:hover {\n  color: #00aaff;\n}\n\n.footer p {\n  font-size: 14px;\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Footer with Two Columns",
+		"description": "A footer with two columns, one for navigation links and another for contact information, with smooth hover effects.",
+		"html": "<footer class=\"footer\">\n  <div class=\"footer-content\">\n    <div class=\"footer-column\">\n      <ul class=\"footer-links\">\n        <li><a href=\"#\">Home</a></li>\n        <li><a href=\"#\">Services</a></li>\n        <li><a href=\"#\">Portfolio</a></li>\n        <li><a href=\"#\">Blog</a></li>\n      </ul>\n    </div>\n    <div class=\"footer-column\">\n      <p>Contact Us: info@example.com</p>\n      <p>Phone: +1 (123) 456-7890</p>\n    </div>\n  </div>\n  <p>&copy; 2025 Your Company. All Rights Reserved.</p>\n</footer>",
+		"css": ".footer {\n  background-color: #222;\n  color: white;\n  padding: 40px 0;\n  text-align: center;\n  position: relative;\n  bottom: 0;\n  width: 100%;\n}\n\n.footer .footer-content {\n  display: flex;\n  justify-content: space-between;\n  gap: 40px;\n  margin-bottom: 20px;\n}\n\n.footer-column {\n  flex: 1;\n}\n\n.footer .footer-links {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n\n.footer .footer-links li {\n  font-size: 16px;\n  margin-bottom: 10px;\n}\n\n.footer .footer-links a {\n  text-decoration: none;\n  color: white;\n  transition: color 0.3s ease;\n}\n\n.footer .footer-links a:hover {\n  color: #00aaff;\n}\n\n.footer p {\n  font-size: 14px;\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Two Paragraphs with Squares Side by Side",
+		"description": "A layout with two paragraphs on the left side and two squares on the right, arranged horizontally with added styling and symmetry.",
+		"html": "<div class=\"layout\">\n  <div class=\"content\">\n    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut purus euismod, luctus arcu a, tristique augue.</p>\n    <p>Nullam sed erat nec lectus viverra fringilla. Sed tincidunt arcu felis, eget sodales metus pharetra sed.</p>\n  </div>\n  <div class=\"squares\">\n    <div class=\"square\"></div>\n    <div class=\"square\"></div>\n  </div>\n</div>",
+		"css": ".layout {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 30px;\n  background-color: #f4f4f4;\n  border-radius: 10px;\n}\n\n.content {\n  width: 50%;\n  font-size: 16px;\n  line-height: 1.6;\n  text-align: justify;\n}\n\n.squares {\n  display: flex;\n  gap: 20px;\n  justify-content: center;\n  width: 30%;\n}\n\n.square {\n  width: 120px;\n  height: 120px;\n  background-color: #3498db;\n  border-radius: 8px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n\n.square:hover {\n  transform: scale(1.1);\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);\n}",
+		"js": ""
+	  },
+
+	  {
+		"name": "Split Layout with Paragraphs on Top and Squares Below",
+		"description": "A layout where two paragraphs are displayed on top and two squares are displayed below, centered within the container with added styling.",
+		"html": "<div class=\"split-layout\">\n  <div class=\"top\">\n    <p>Donec mollis mi ac nunc eleifend, ac congue felis tincidunt. Donec condimentum erat et erat facilisis.</p>\n    <p>In sagittis elit eget nunc iaculis, at viverra elit porttitor. Integer tincidunt, lorem ac laoreet aliquam.</p>\n  </div>\n  <div class=\"bottom\">\n    <div class=\"square\"></div>\n    <div class=\"square\"></div>\n  </div>\n</div>",
+		"css": ".split-layout {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 40px;\n  background-color: #f4f4f4;\n  border-radius: 15px;\n}\n\n.top {\n  width: 80%;\n  text-align: center;\n  margin-bottom: 30px;\n}\n\n.bottom {\n  display: flex;\n  gap: 30px;\n}\n\n.square {\n  width: 120px;\n  height: 120px;\n  background-color: #2ecc71;\n  border-radius: 12px;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n\n.square:hover {\n  transform: translateY(-10px);\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Mosaic Puzzle Layout",
+		"description": "A grid layout with irregularly sized boxes that fit together like a mosaic.",
+		"html": "<div class=\"mosaic-grid\">\n  <div class=\"item item-1\"></div>\n  <div class=\"item item-2\"></div>\n  <div class=\"item item-3\"></div>\n  <div class=\"item item-4\"></div>\n  <div class=\"item item-5\"></div>\n  <div class=\"item item-6\"></div>\n</div>",
+		"css": ".mosaic-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  gap: 10px;\n  width: 100%;\n  height: 100vh;\n}\n\n.item {\n  background-color: #3498db;\n  border-radius: 10px;\n}\n\n.item-1 {\n  grid-column: span 2;\n  grid-row: span 2;\n}\n\n.item-2 {\n  grid-column: span 1;\n  grid-row: span 1;\n}\n\n.item-3 {\n  grid-column: span 1;\n  grid-row: span 2;\n}\n\n.item-4 {\n  grid-column: span 2;\n  grid-row: span 1;\n}\n\n.item-5 {\n  grid-column: span 1;\n  grid-row: span 1;\n}\n\n.item-6 {\n  grid-column: span 1;\n  grid-row: span 2;\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Checkerboard Layout",
+		"description": "A grid layout with alternating box sizes, creating a checkerboard pattern.",
+		"html": "<div class=\"checkerboard-grid\">\n  <div class=\"item item-1\"></div>\n  <div class=\"item item-2\"></div>\n  <div class=\"item item-3\"></div>\n  <div class=\"item item-4\"></div>\n  <div class=\"item item-5\"></div>\n  <div class=\"item item-6\"></div>\n</div>",
+		"css": ".checkerboard-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  gap: 10px;\n  width: 100%;\n  height: 100vh;\n}\n\n.item {\n  background-color: #e74c3c;\n  border-radius: 10px;\n}\n\n.item-1 {\n  grid-column: span 1;\n  grid-row: span 1;\n}\n\n.item-2 {\n  grid-column: span 2;\n  grid-row: span 1;\n}\n\n.item-3 {\n  grid-column: span 1;\n  grid-row: span 2;\n}\n\n.item-4 {\n  grid-column: span 2;\n  grid-row: span 1;\n}\n\n.item-5 {\n  grid-column: span 1;\n  grid-row: span 1;\n}\n\n.item-6 {\n  grid-column: span 1;\n  grid-row: span 2;\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Zigzag Layout",
+		"description": "A zigzag pattern layout with boxes that alternate between different sizes.",
+		"html": "<div class=\"zigzag-grid\">\n  <div class=\"item item-1\"></div>\n  <div class=\"item item-2\"></div>\n  <div class=\"item item-3\"></div>\n  <div class=\"item item-4\"></div>\n  <div class=\"item item-5\"></div>\n  <div class=\"item item-6\"></div>\n</div>",
+		"css": ".zigzag-grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(2, 1fr);\n  gap: 10px;\n  width: 100%;\n  height: 100vh;\n}\n\n.item {\n  background-color: #2ecc71;\n  border-radius: 10px;\n}\n\n.item-1 {\n  grid-column: span 2;\n  grid-row: span 1;\n}\n\n.item-2 {\n  grid-column: span 1;\n  grid-row: span 2;\n}\n\n.item-3 {\n  grid-column: span 1;\n  grid-row: span 1;\n}\n\n.item-4 {\n  grid-column: span 1;\n  grid-row: span 1;\n}\n\n.item-5 {\n  grid-column: span 2;\n  grid-row: span 1;\n}\n\n.item-6 {\n  grid-column: span 1;\n  grid-row: span 1;\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Asymmetrical Layout",
+		"description": "An asymmetrical grid layout with boxes placed irregularly across the container.",
+		"html": "<div class=\"asymmetrical-grid\">\n  <div class=\"item item-1\"></div>\n  <div class=\"item item-2\"></div>\n  <div class=\"item item-3\"></div>\n  <div class=\"item item-4\"></div>\n  <div class=\"item item-5\"></div>\n  <div class=\"item item-6\"></div>\n</div>",
+		"css": ".asymmetrical-grid {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  gap: 15px;\n  width: 100%;\n  height: 100vh;\n}\n\n.item {\n  background-color: #f39c12;\n  border-radius: 10px;\n}\n\n.item-1 {\n  grid-column: span 3;\n  grid-row: span 2;\n}\n\n.item-2 {\n  grid-column: span 1;\n  grid-row: span 1;\n}\n\n.item-3 {\n  grid-column: span 2;\n  grid-row: span 1;\n}\n\n.item-4 {\n  grid-column: span 1;\n  grid-row: span 2;\n}\n\n.item-5 {\n  grid-column: span 1;\n  grid-row: span 1;\n}\n\n.item-6 {\n  grid-column: span 2;\n  grid-row: span 1;\n}",
+		"js": ""
+	  },
+	  
+	  
+
+
+	  {
+		"name": "Paragraphs on Left, Squares on Right with Hover Animation",
+		"description": "A creative layout with two paragraphs on the left and two squares on the right, with enhanced hover effects and symmetry.",
+		"html": "<div class=\"paragraph-square-layout\">\n  <div class=\"paragraphs\">\n    <p>Proin feugiat sem vitae odio suscipit, non eleifend neque efficitur. Aenean ac ipsum mollis, bibendum libero et, maximus leo.</p>\n    <p>Quisque placerat lacinia velit, vel ullamcorper dui fermentum eget. Nam ultricies elit in nisi interdum, ac lacinia eros.</p>\n  </div>\n  <div class=\"squares\">\n    <div class=\"square\"></div>\n    <div class=\"square\"></div>\n  </div>\n</div>",
+		"css": ".paragraph-square-layout {\n  display: flex;\n  justify-content: space-between;\n  padding: 40px;\n  background-color: #eaeaea;\n  border-radius: 12px;\n}\n\n.paragraphs {\n  width: 50%;\n  font-size: 16px;\n  line-height: 1.8;\n  text-align: justify;\n  color: #333;\n}\n\n.squares {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  width: 30%;\n  justify-content: center;\n}\n\n.square {\n  width: 100px;\n  height: 100px;\n  background-color: #f39c12;\n  border-radius: 10px;\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n\n.square:hover {\n  transform: scale(1.2);\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Two Column Table with Grey Top Row",
+		"description": "A table layout with two columns where the top row has a grey background, creating a clean and modern look.",
+		"html": "<table class=\"styled-table\">\n  <thead>\n    <tr>\n      <th>Column 1</th>\n      <th>Column 2</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Data 1</td>\n      <td>Data 2</td>\n    </tr>\n    <tr>\n      <td>Data 3</td>\n      <td>Data 4</td>\n    </tr>\n    <tr>\n      <td>Data 5</td>\n      <td>Data 6</td>\n    </tr>\n  </tbody>\n</table>",
+		"css": ".styled-table {\n  width: 60%;\n  margin: 20px auto;\n  border-collapse: collapse;\n  font-size: 18px;\n  background-color: #fff;\n  border-radius: 10px;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n}\n\n.styled-table th, .styled-table td {\n  padding: 12px 20px;\n  text-align: left;\n}\n\n.styled-table thead {\n  background-color: #bdc3c7;\n  color: #fff;\n}\n\n.styled-table tbody tr:nth-child(even) {\n  background-color: #ecf0f1;\n}\n\n.styled-table tbody tr:hover {\n  background-color: #e74c3c;\n  color: #fff;\n  transform: translateY(-3px);\n  transition: all 0.3s ease;\n}\n",
+		"js": ""
+	  },
+	  {
+		"name": "Modern Table with Hover Effects",
+		"description": "A modern two-column table design with more rows and interactive hover effects.",
+		"html": "<table class=\"modern-table\">\n  <thead>\n    <tr>\n      <th>Column 1</th>\n      <th>Column 2</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Data 1</td>\n      <td>Data A</td>\n    </tr>\n    <tr>\n      <td>Data 2</td>\n      <td>Data B</td>\n    </tr>\n    <tr>\n      <td>Data 3</td>\n      <td>Data C</td>\n    </tr>\n    <tr>\n      <td>Data 4</td>\n      <td>Data D</td>\n    </tr>\n    <tr>\n      <td>Data 5</td>\n      <td>Data E</td>\n    </tr>\n    <tr>\n      <td>Data 6</td>\n      <td>Data F</td>\n    </tr>\n    <tr>\n      <td>Data 7</td>\n      <td>Data G</td>\n    </tr>\n  </tbody>\n</table>",
+		"css": ".modern-table {\n  width: 80%;\n  margin: 30px auto;\n  border-collapse: collapse;\n  font-size: 18px;\n  background-color: #fff;\n  border-radius: 12px;\n  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\n}\n\n.modern-table th, .modern-table td {\n  padding: 15px 25px;\n  text-align: left;\n}\n\n.modern-table thead {\n  background-color: #34495e;\n  color: #fff;\n}\n\n.modern-table tbody tr:nth-child(odd) {\n  background-color: #ecf0f1;\n}\n\n.modern-table tbody tr:nth-child(even) {\n  background-color: #bdc3c7;\n}\n\n.modern-table tbody tr:hover {\n  background-color: #2980b9;\n  color: #fff;\n  transform: translateY(-5px);\n  transition: all 0.3s ease;\n}\n"
+	  },
+	  {
+		"name": "Checkboxes and Radio Buttons",
+		"description": "A modern and interactive design for checkboxes and radio buttons with multiple styles and smooth animations.",
+		"html": "<div class=\"checkbox-container\">\n  <label class=\"styled-checkbox\">\n    <input type=\"checkbox\" />\n    <span class=\"checkbox-custom\"></span>\n    Accept Terms & Conditions\n  </label>\n  <label class=\"styled-checkbox\">\n    <input type=\"checkbox\" />\n    <span class=\"checkbox-custom\"></span>\n    Subscribe to Newsletter\n  </label>\n  <label class=\"styled-checkbox\">\n    <input type=\"checkbox\" />\n    <span class=\"checkbox-custom\"></span>\n    Receive Updates\n  </label>\n</div>\n\n<div class=\"radio-container\">\n  <label class=\"styled-radio\">\n    <input type=\"radio\" name=\"option\" />\n    <span class=\"radio-custom\"></span>\n    Option 1\n  </label>\n  <label class=\"styled-radio\">\n    <input type=\"radio\" name=\"option\" />\n    <span class=\"radio-custom\"></span>\n    Option 2\n  </label>\n  <label class=\"styled-radio\">\n    <input type=\"radio\" name=\"option\" />\n    <span class=\"radio-custom\"></span>\n    Option 3\n  </label>\n  <label class=\"styled-radio\">\n    <input type=\"radio\" name=\"option\" />\n    <span class=\"radio-custom\"></span>\n    Option 4\n  </label>\n</div>",
+		"css": ".checkbox-container, .radio-container {\n  margin: 20px;\n}\n\n.styled-checkbox, .styled-radio {\n  display: flex;\n  align-items: center;\n  font-size: 18px;\n  color: #333;\n  position: relative;\n  cursor: pointer;\n  margin-bottom: 15px;\n}\n\n.styled-checkbox input, .styled-radio input {\n  display: none;\n}\n\n.checkbox-custom, .radio-custom {\n  width: 20px;\n  height: 20px;\n  border: 2px solid #3498db;\n  border-radius: 5px;\n  margin-right: 10px;\n  position: relative;\n  transition: all 0.3s ease;\n}\n\n.checkbox-custom:before, .radio-custom:before {\n  content: '';\n  position: absolute;\n  top: 2px;\n  left: 2px;\n  width: 14px;\n  height: 14px;\n  background-color: #3498db;\n  border-radius: 3px;\n  opacity: 0;\n  transition: all 0.3s ease;\n}\n\n.styled-checkbox input:checked + .checkbox-custom:before {\n  opacity: 1;\n}\n\n.styled-radio input:checked + .radio-custom:before {\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  top: 5px;\n  left: 5px;\n}\n\n.styled-checkbox:hover .checkbox-custom, .styled-radio:hover .radio-custom {\n  border-color: #2980b9;\n  transform: scale(1.1);\n}\n\n.styled-checkbox input:checked + .checkbox-custom {\n  background-color: #3498db;\n  border-color: #3498db;\n}\n\n.styled-radio input:checked + .radio-custom {\n  background-color: #3498db;\n  border-color: #3498db;\n}\n\n.styled-radio input:checked + .radio-custom {\n  background-color: #f39c12;\n  border-color: #f39c12;\n}\n\n.styled-checkbox:active .checkbox-custom, .styled-radio:active .radio-custom {\n  transform: scale(0.95);\n}\n\n.styled-checkbox input:disabled + .checkbox-custom, .styled-radio input:disabled + .radio-custom {\n  background-color: #ddd;\n  border-color: #ccc;\n}\n\n.styled-checkbox input:disabled + .checkbox-custom:before, .styled-radio input:disabled + .radio-custom:before {\n  background-color: #ccc;\n  opacity: 0.6;\n}\n\n.styled-radio input:checked + .radio-custom {\n  background-color: #f39c12;\n}\n"
+	  },
+	  {
+		"name": "Toggle Buttons",
+		"description": "A collection of modern toggle buttons with smooth animations and various styles for better user interaction.",
+		"html": "<div class=\"toggle-container\">\n  <label class=\"toggle-label\">\n    <input type=\"checkbox\" class=\"toggle-input\" />\n    <span class=\"toggle-slider\"></span>\n    Toggle Me\n  </label>\n  <label class=\"toggle-label\">\n    <input type=\"checkbox\" class=\"toggle-input\" />\n    <span class=\"toggle-slider\"></span>\n    Enable Feature\n  </label>\n  <label class=\"toggle-label\">\n    <input type=\"checkbox\" class=\"toggle-input\" />\n    <span class=\"toggle-slider\"></span>\n    Subscribe\n  </label>\n</div>",
+		"css": ".toggle-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 20px;\n}\n\n.toggle-label {\n  display: flex;\n  align-items: center;\n  font-size: 18px;\n  color: #333;\n  position: relative;\n  cursor: pointer;\n  margin-bottom: 15px;\n}\n\n.toggle-input {\n  display: none;\n}\n\n.toggle-slider {\n  position: relative;\n  width: 50px;\n  height: 24px;\n  background-color: #ccc;\n  border-radius: 50px;\n  transition: background-color 0.3s ease;\n  cursor: pointer;\n  margin-right: 10px;\n}\n\n.toggle-slider:before {\n  content: '';\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 16px;\n  height: 16px;\n  background-color: #fff;\n  border-radius: 50%;\n  transition: transform 0.3s ease;\n}\n\n.toggle-input:checked + .toggle-slider {\n  background-color: #3498db;\n}\n\n.toggle-input:checked + .toggle-slider:before {\n  transform: translateX(26px);\n}\n\n.toggle-label:hover .toggle-slider {\n  background-color: #2980b9;\n  transform: scale(1.1);\n}\n\n.toggle-input:active + .toggle-slider {\n  transform: scale(0.95);\n}\n\n.toggle-input:disabled + .toggle-slider {\n  background-color: #ddd;\n  cursor: not-allowed;\n}\n\n.toggle-input:disabled + .toggle-slider:before {\n  background-color: #ccc;\n}\n"
+	  },	
+
+	  {
+		"name": "Circle Toggle",
+		"description": "A circular toggle where the button rotates around its center, transitioning between two states with a dynamic rotating effect.",
+		"html": "<div class=\"circle-toggle-container\">\n  <label class=\"circle-toggle-label\">\n    <input type=\"checkbox\" class=\"circle-toggle-input\" />\n    <span class=\"circle-toggle-slider\"></span>\n    Enable Option\n  </label>\n</div>",
+		"css": ".circle-toggle-container {\n  display: flex;\n  justify-content: center;\n  margin: 20px;\n}\n\n.circle-toggle-label {\n  display: flex;\n  align-items: center;\n  font-size: 18px;\n  color: #333;\n  position: relative;\n  cursor: pointer;\n  margin-bottom: 15px;\n}\n\n.circle-toggle-input {\n  display: none;\n}\n\n.circle-toggle-slider {\n  position: relative;\n  width: 60px;\n  height: 60px;\n  background-color: #ccc;\n  border-radius: 50%;\n  transition: background-color 0.3s ease, transform 0.3s ease;\n  cursor: pointer;\n  margin-right: 10px;\n}\n\n.circle-toggle-slider:before {\n  content: '';\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 30px;\n  height: 30px;\n  background-color: #fff;\n  border-radius: 50%;\n  transform: translate(-50%, -50%);\n  transition: transform 0.3s ease;\n}\n\n.circle-toggle-input:checked + .circle-toggle-slider {\n  background-color: #3498db;\n}\n\n.circle-toggle-input:checked + .circle-toggle-slider:before {\n  transform: translate(-50%, -50%) rotate(180deg);\n}\n\n.circle-toggle-label:hover .circle-toggle-slider {\n  background-color: #2980b9;\n  transform: scale(1.1);\n}\n\n.circle-toggle-input:active + .circle-toggle-slider {\n  transform: scale(0.95);\n}\n\n.circle-toggle-input:disabled + .circle-toggle-slider {\n  background-color: #ddd;\n  cursor: not-allowed;\n}\n\n.circle-toggle-input:disabled + .circle-toggle-slider:before {\n  background-color: #ccc;\n}\n"
+	  },
+		  
+
+	  {
+		"name": "splitScreenSlidingPanelsLayout",
+		"html": "<div class=\"split-screen\"> <div class=\"panel left-panel\"> <h1>Welcome</h1>  </div> <div class=\"panel right-panel\"> <h1>About Us</h1>  </div> </div>",
+		"css": "body { margin: 0; font-family: Arial, sans-serif; overflow-x: hidden; } .split-screen { display: flex; min-height: 100%; overflow: hidden; } .panel { flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column; color: white; transition: transform 0.6s ease-in-out; } .left-panel { background: linear-gradient(135deg, #3498db, #2ecc71); z-index: 2; } .right-panel { background: linear-gradient(135deg, #e74c3c, #f39c12); z-index: 2; } .split-screen:hover .left-panel { transform: translateX(-100%); } .split-screen:hover .right-panel { transform: translateX(100%); }",
+		"js": "document.querySelector('.split-screen').addEventListener('mouseenter', () => { console.log('Hovering over the split screen layout!'); }); document.querySelector('.split-screen').addEventListener('mouseleave', () => { const panels = document.querySelectorAll('.panel'); panels.forEach(panel => panel.style.transform = ''); });",
+		"description": "A split-screen layout with sliding panels that fully split off on hover while keeping the page scrollable."
+	  },	  
+	  {
+		"name": "Multiple Flip Cards",
+		"description": "A list where each item flips 3D on hover, revealing more details or description on the back.",
+		"html": "<div class=\"flip-list\">\n  <ul>\n    <li class=\"flip-item\">\n      <div class=\"flip-inner\">\n        <div class=\"flip-front\">\n          <h3>Item 1</h3>\n        </div>\n        <div class=\"flip-back\">\n          <p>More details about Item 1</p>\n        </div>\n      </div>\n    </li>\n    <li class=\"flip-item\">\n      <div class=\"flip-inner\">\n        <div class=\"flip-front\">\n          <h3>Item 2</h3>\n        </div>\n        <div class=\"flip-back\">\n          <p>More details about Item 2</p>\n        </div>\n      </div>\n    </li>\n    <li class=\"flip-item\">\n      <div class=\"flip-inner\">\n        <div class=\"flip-front\">\n          <h3>Item 3</h3>\n        </div>\n        <div class=\"flip-back\">\n          <p>More details about Item 3</p>\n        </div>\n      </div>\n    </li>\n  </ul>\n</div>",
+		"css": ".flip-list ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  justify-content: center;\n}\n\n.flip-item {\n  perspective: 1000px;\n  width: 150px;\n  margin: 20px;\n}\n\n.flip-inner {\n  width: 100%;\n  height: 200px;\n  position: relative;\n  transform-style: preserve-3d;\n  transition: transform 0.6s;\n}\n\n.flip-item:hover .flip-inner {\n  transform: rotateY(180deg);\n}\n\n.flip-front,\n.flip-back {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  backface-visibility: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.flip-front {\n  background-color: #ff5722;\n  color: white;\n  font-size: 20px;\n  border-radius: 5px;\n}\n\n.flip-back {\n  background-color: #2196f3;\n  color: white;\n  font-size: 16px;\n  border-radius: 5px;\n  transform: rotateY(180deg);\n}",
+		"js": ""
+	  },
+
+	  {
+		"name": "Neon Glow Range Slider",
+		"description": "A range slider with a neon glow effect that activates when the slider is being adjusted.",
+		"html": "<div class=\"neon-slider-container\">\n  <input type=\"range\" class=\"neon-slider\" min=\"0\" max=\"100\" value=\"50\">\n  <div class=\"slider-value\">50</div>\n</div>",
+		"css": ".neon-slider-container {\n  width: 300px;\n  margin: 50px auto;\n  text-align: center;\n  position: relative;\n}\n\n.neon-slider {\n  -webkit-appearance: none;\n  width: 100%;\n  height: 10px;\n  background: #333;\n  border-radius: 5px;\n  outline: none;\n  transition: background 0.2s ease;\n  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);\n}\n\n.neon-slider:hover {\n  background: #00ffff;\n}\n\n.neon-slider::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  background: #00ffff;\n  cursor: pointer;\n  box-shadow: 0 0 10px rgba(0, 255, 255, 1);\n}\n\n.neon-slider:focus::-webkit-slider-thumb {\n  box-shadow: 0 0 15px rgba(0, 255, 255, 1);\n}\n\n.slider-value {\n  font-size: 20px;\n  font-weight: bold;\n  color: #00ffff;\n  margin-top: 10px;\n}",
+		"js": "const slider = document.querySelector('.neon-slider');\nconst value = document.querySelector('.slider-value');\n\nslider.addEventListener('input', () => {\n  value.textContent = slider.value;\n});"
+	  },
+	  {
+		"name": "Color Transition Slider",
+		"description": "A range slider that transitions through different colors as the value changes.",
+		"html": "<div class=\"color-slider-container\">\n  <input type=\"range\" class=\"color-slider\" min=\"0\" max=\"100\" value=\"50\">\n  <div class=\"slider-value\">50</div>\n</div>",
+		"css": ".color-slider-container {\n  width: 300px;\n  margin: 50px auto;\n  text-align: center;\n}\n\n.color-slider {\n  -webkit-appearance: none;\n  width: 100%;\n  height: 10px;\n  background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #0000ff);\n  border-radius: 5px;\n  outline: none;\n  transition: background 0.2s ease;\n}\n\n.color-slider::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  background: #2196f3;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n\n.color-slider:focus::-webkit-slider-thumb {\n  background: #ff5722;\n}\n\n.slider-value {\n  font-size: 20px;\n  font-weight: bold;\n  color: #333;\n  margin-top: 10px;\n}",
+		"js": "const colorSlider = document.querySelector('.color-slider');\nconst colorValue = document.querySelector('.slider-value');\n\ncolorSlider.addEventListener('input', () => {\n  colorValue.textContent = colorSlider.value;\n});"
+	  },
+	  {
+		"name": "Minimalist Labeled Slider",
+		"description": "A clean, minimalist range slider with labels showing values at important points.",
+		"html": "<div class=\"minimalist-slider-container\">\n  <input type=\"range\" class=\"minimalist-slider\" min=\"0\" max=\"100\" value=\"50\">\n  <div class=\"slider-labels\">\n    <span>0</span><span>50</span><span>100</span>\n  </div>\n</div>",
+		"css": ".minimalist-slider-container {\n  width: 300px;\n  margin: 50px auto;\n  text-align: center;\n}\n\n.minimalist-slider {\n  -webkit-appearance: none;\n  width: 100%;\n  height: 10px;\n  background-color: #e0e0e0;\n  border-radius: 5px;\n  outline: none;\n}\n\n.minimalist-slider::-webkit-slider-thumb {\n  -webkit-appearance: none;\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  background: #4CAF50;\n  cursor: pointer;\n}\n\n.slider-labels {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 10px;\n  color: #555;\n  font-size: 16px;\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Bounce Text Animation",
+		"description": "Each letter in the text bounces up and down with a delay for each letter.",
+		"html": "<h1 class=\"bounce-text\">Bounce Effect</h1>",
+		"css": "@keyframes bounce {\n  0% { transform: translateY(0); }\n  50% { transform: translateY(-10px); }\n  100% { transform: translateY(0); }\n}\n\n.bounce-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.bounce-text span {\n  display: inline-block;\n  animation: bounce 0.6s ease infinite;\n}\n\n.bounce-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.bounce-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.bounce-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Staggered Fade In Text",
+		"description": "Each letter of the text fades in one by one with a delay.",
+		"html": "<h1 class=\"fade-text\">Fade In Effect</h1>",
+		"css": "@keyframes fadeIn {\n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}\n\n.fade-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.fade-text span {\n  opacity: 0;\n  display: inline-block;\n  animation: fadeIn 0.5s forwards;\n}",
+		"js": "const text = document.querySelector('.fade-text');\ntext.innerHTML = text.textContent\n  .split('')\n  .map((letter, index) => {\n    const delay = index * 0.1; // Calculate delay based on index\n    return letter === ' '\n      ? '<span style=\"animation-delay: ' + delay + 's;\">&nbsp;</span>'\n      : '<span style=\"animation-delay: ' + delay + 's;\">' + letter + '</span>';\n  })\n  .join('');"
+	},
+	{
+		"name": "Staggered Fly In Text",
+		"description": "Each letter of the text flies into place one by one from the left.",
+		"html": "<h1 class=\"fly-text\">Fly In Effect</h1>",
+		"css": "@keyframes flyIn {\n  0% {\n    opacity: .5;\n    transform: translateX(100%);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0);\n  }\n}\n\n.fly-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n  overflow: hidden;\n}\n\n.fly-text span {\n  opacity: 0;\n  display: inline-block;\n  animation: flyIn 0.1s forwards;\n}",
+		"js": "const text = document.querySelector('.fly-text');\ntext.innerHTML = text.textContent\n  .split('')\n  .map((letter, index) => {\n    const delay = index * 0.1; // Calculate delay based on index\n    return letter === ' '\n      ? '<span style=\"animation-delay: ' + delay + 's;\">&nbsp;</span>'\n      : '<span style=\"animation-delay: ' + delay + 's;\">' + letter + '</span>';\n  })\n  .join('');"
+	},	
+		
+	  {
+		"name": "Pulse Text Animation",
+		"description": "Each letter of the text pulses in size continuously.",
+		"html": "<h1 class=\"pulse-text\">Pulse Effect</h1>",
+		"css": "@keyframes pulse {\n  0% { transform: scale(1); }\n  50% { transform: scale(1.3); }\n  100% { transform: scale(1); }\n}\n\n.pulse-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.pulse-text span {\n  display: inline-block;\n  animation: pulse 1.5s infinite;\n}\n\n.pulse-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.pulse-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.pulse-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Text Fade In with Zoom",
+		"description": "Each letter fades in and zooms in at the same time with a delay.",
+		"html": "<h1 class=\"zoom-text\">Zoom and Fade Effect</h1>",
+		"css": "@keyframes zoomFade {\n  0% { opacity: 0; transform: scale(0.5); }\n  100% { opacity: 1; transform: scale(1); }\n}\n\n.zoom-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.zoom-text span {\n  display: inline-block;\n  opacity: 0;\n  animation: zoomFade 0.6s forwards;\n}\n\n.zoom-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.zoom-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.zoom-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Ripple Text Animation",
+		"description": "Each letter ripples in a wave-like motion as it appears.",
+		"html": "<h1 class=\"ripple-text\">Ripple Effect</h1>",
+		"css": "@keyframes ripple {\n  0% { transform: scale(1); opacity: 0; }\n  50% { transform: scale(1.2); opacity: 1; }\n  100% { transform: scale(1); opacity: 1; }\n}\n\n.ripple-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.ripple-text span {\n  display: inline-block;\n  animation: ripple 0.8s ease forwards;\n}\n\n.ripple-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.ripple-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.ripple-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Shadow Glow Text",
+		"description": "Each letter glows with a moving text shadow.",
+		"html": "<h1 class=\"glow-text\">Glow Effect</h1>",
+		"css": "@keyframes glow {\n  0% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.7), 0 0 10px rgba(255, 0, 0, 0.7); }\n  50% { text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7); }\n  100% { text-shadow: 0 0 5px rgba(255, 0, 0, 0.7), 0 0 10px rgba(255, 0, 0, 0.7); }\n}\n\n.glow-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #fff;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n  animation: glow 1s ease infinite;\n}",
+		"js": ""
+	  },
+	  {
+		"name": "Wave Text Animation",
+		"description": "Each letter moves in a wave-like motion across the screen.",
+		"html": "<h1 class=\"wave-text\">Wave Effect</h1>",
+		"css": "@keyframes wave {\n  0% { transform: translateY(0); }\n  50% { transform: translateY(-15px); }\n  100% { transform: translateY(0); }\n}\n\n.wave-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.wave-text span {\n  display: inline-block;\n  animation: wave 1s ease infinite;\n}\n\n.wave-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.wave-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.wave-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Skew and Twist Text",
+		"description": "Each letter is skewed and rotated for a dynamic 3D effect.",
+		"html": "<h1 class=\"skew-text\">Skew Effect</h1>",
+		"css": "@keyframes skew {\n  0% { transform: skewX(0) rotate(0); }\n  50% { transform: skewX(15deg) rotate(10deg); }\n  100% { transform: skewX(0) rotate(0); }\n}\n\n.skew-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.skew-text span {\n  display: inline-block;\n  animation: skew 1s ease forwards;\n}\n\n.skew-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.skew-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.skew-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Flip Text Animation",
+		"description": "Each letter flips around its center, creating a 3D flipping effect.",
+		"html": "<h1 class=\"flip-text\">Flip Effect</h1>",
+		"css": "@keyframes flip {\n  0% { transform: rotateY(0deg); }\n  50% { transform: rotateY(180deg); }\n  100% { transform: rotateY(0deg); }\n}\n\n.flip-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.flip-text span {\n  display: inline-block;\n  animation: flip 1s ease forwards;\n}\n\n.flip-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.flip-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.flip-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Rotate and Scale Text",
+		"description": "Each letter rotates and scales up and down, creating a 3D effect.",
+		"html": "<h1 class=\"rotate-scale-text\">Rotate and Scale</h1>",
+		"css": "@keyframes rotate-scale {\n  0% { transform: rotate(0deg) scale(1); }\n  50% { transform: rotate(45deg) scale(1.5); }\n  100% { transform: rotate(0deg) scale(1); }\n}\n\n.rotate-scale-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.rotate-scale-text span {\n  display: inline-block;\n  animation: rotate-scale 1.5s ease-in-out forwards;\n}\n\n.rotate-scale-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.rotate-scale-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.rotate-scale-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Bounce and Stretch Text",
+		"description": "Each letter bounces and stretches in a fun way.",
+		"html": "<h1 class=\"bounce-stretch-text\">Bounce and Stretch</h1>",
+		"css": "@keyframes bounce-stretch {\n  0% { transform: translateY(0) scaleX(1); }\n  25% { transform: translateY(-20px) scaleX(1.5); }\n  50% { transform: translateY(0) scaleX(1); }\n  75% { transform: translateY(-10px) scaleX(0.8); }\n  100% { transform: translateY(0) scaleX(1); }\n}\n\n.bounce-stretch-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.bounce-stretch-text span {\n  display: inline-block;\n  animation: bounce-stretch 1.2s ease-in-out infinite;\n}\n\n.bounce-stretch-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.bounce-stretch-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.bounce-stretch-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Flip and Slide Text",
+		"description": "Each letter flips and slides into place from the left.",
+		"html": "<h1 class=\"flip-slide-text\">Flip and Slide</h1>",
+		"css": "@keyframes flip-slide {\n  0% { transform: rotateY(90deg) translateX(-50px); opacity: 0; }\n  100% { transform: rotateY(0deg) translateX(0); opacity: 1; }\n}\n\n.flip-slide-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.flip-slide-text span {\n  display: inline-block;\n  animation: flip-slide 1s ease-in-out forwards;\n}\n\n.flip-slide-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.flip-slide-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.flip-slide-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Shake and Fade Text",
+		"description": "Each letter shakes and fades in and out in a dynamic manner.",
+		"html": "<h1 class=\"shake-fade-text\">Shake and Fade</h1>",
+		"css": "@keyframes shake-fade {\n  0% { transform: translateX(0); opacity: 0; }\n  25% { transform: translateX(-5px); opacity: 0.5; }\n  50% { transform: translateX(5px); opacity: 1; }\n  75% { transform: translateX(-5px); opacity: 0.5; }\n  100% { transform: translateX(0); opacity: 1; }\n}\n\n.shake-fade-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.shake-fade-text span {\n  display: inline-block;\n  animation: shake-fade 1s ease-in-out infinite;\n}\n\n.shake-fade-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.shake-fade-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.shake-fade-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Bounce and Rotate Text",
+		"description": "Each letter bounces and rotates for a dynamic effect.",
+		"html": "<h1 class=\"bounce-rotate-text\">Bounce and Rotate</h1>",
+		"css": "@keyframes bounce-rotate {\n  0% { transform: rotate(0deg) translateY(0); }\n  50% { transform: rotate(360deg) translateY(-20px); }\n  100% { transform: rotate(0deg) translateY(0); }\n}\n\n.bounce-rotate-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.bounce-rotate-text span {\n  display: inline-block;\n  animation: bounce-rotate 1.5s ease-in-out infinite;\n}\n\n.bounce-rotate-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.bounce-rotate-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.bounce-rotate-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Fall from the Sky Text",
+		"description": "Each letter falls from the sky and lands into place with a bounce effect.",
+		"html": "<h1 class=\"fall-from-sky-text\">Fall from the Sky</h1>",
+		"css": "@keyframes fall-from-sky {\n  0% { transform: translateY(-200px) rotate(0deg); opacity: 0; }\n  50% { transform: translateY(20px) rotate(180deg); opacity: 0.8; }\n  100% { transform: translateY(0) rotate(360deg); opacity: 1; }\n}\n\n.fall-from-sky-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n  position: relative;\n}\n\n.fall-from-sky-text span {\n  display: inline-block;\n  animation: fall-from-sky 1.2s ease-out forwards;\n}\n\n.fall-from-sky-text span:nth-child(odd) {\n  animation-delay: 0.1s;\n}\n\n.fall-from-sky-text span:nth-child(even) {\n  animation-delay: 0.2s;\n}",
+		"js": "const text = document.querySelector('.fall-from-sky-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Random Fall Text with Spaces",
+		"description": "Letters fall randomly from the sky and smash into place, while keeping spaces intact.",
+		"html": "<h1 class=\"random-fall-text\">Random Fall</h1>",
+		"css": "@keyframes random-fall {\n  0% { transform: translateY(-300px); opacity: 0; }\n  100% { transform: translateY(0); opacity: 1; }\n}\n\n.random-fall-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n  position: relative;\n  white-space: nowrap;\n}\n\n.random-fall-text span {\n  display: inline-block;\n  opacity: 0;\n  animation: random-fall .2s ease-out forwards;\n  visibility: hidden; /* Keeps the text hidden until animation starts */\n}\n\n.random-fall-text span.revealed {\n  visibility: visible; /* Makes text visible when it falls into place */\n}\n\n.random-fall-text span.space {\n  visibility: visible; /* Spaces are always visible */\n  display: inline-block;\n}",
+		"js": "const text = document.querySelector('.random-fall-text');\nconst letters = text.textContent.split('');\n\n// Map each character into a span element, keeping spaces intact\ntext.innerHTML = letters.map(letter => {\n  if (letter === ' ') {\n    return '<span class=\"space\">&nbsp;</span>';\n  }\n  return `<span>${letter}</span>`;\n}).join('');\n\n// Randomize the fall order for non-space letters\nconst spans = Array.from(document.querySelectorAll('.random-fall-text span:not(.space)'));\nconst randomizedOrder = spans.map((span, i) => ({ span, order: Math.random() })).sort((a, b) => a.order - b.order);\n\nrandomizedOrder.forEach(({ span }, i) => {\n  setTimeout(() => {\n    span.classList.add('revealed');\n    span.style.animationDelay = `${i * 0.1}s`;\n  }, i * 100); // Gradually reveal letters one by one\n});"
+	  },	  
+	  {
+		"name": "Hover Text Scale Letters",
+		"description": "Each letter scales up individually when hovered, creating a dynamic interactive effect.",
+		"html": "<h1 class=\"hover-scale-text\">Hover to Scale</h1>",
+		"css": "@keyframes scale-up {\n  0% { transform: scale(1); }\n  100% { transform: scale(1.3); }\n}\n\n.hover-scale-text {\n  display: inline-block;\n  font-size: 50px;\n  font-weight: bold;\n  color: #333;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n  position: relative;\n}\n\n.hover-scale-text span {\n  display: inline-block;\n  transition: transform 0.1s ease;\n}\n\n.hover-scale-text span:hover {\n  transform: scale(1.5);\n}",
+		"js": "const text = document.querySelector('.hover-scale-text');\ntext.innerHTML = text.textContent.split('').map(letter => `<span>${letter}</span>`).join('');"
+	  },
+	  {
+		"name": "Raining Letters Background",
+		"description": "Letters rain from top to bottom with different sizes and fall speeds, repeating indefinitely.",
+		"html": "<div class=\"rain-container\"></div>",
+		"css": "@keyframes rain {\n  0% { top: -100px; opacity: 1; }\n  100% { top: 100%; opacity: 0; }\n}\n\n.rain-container {\n  position: relative;\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #1a1a1a;\n}\n\n.rain-letter {\n  position: absolute;\n  color: #fff;\n  font-family: Arial, sans-serif;\n  font-weight: bold;\n  animation: rain linear infinite;\n}\n\n.rain-letter:nth-child(odd) {\n  animation-duration: 3s;\n}\n\n.rain-letter:nth-child(even) {\n  animation-duration: 5s;\n}\n\n.rain-letter:nth-child(3n) {\n  animation-duration: 4s;\n}\n\n.rain-letter:nth-child(4n) {\n  animation-duration: 6s;\n}\n\n.rain-letter:nth-child(5n) {\n  animation-duration: 2s;\n}\n",
+		"js": "function createRain() {\n  const container = document.querySelector('.rain-container');\n  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.split('');\n\n  for (let i = 0; i < 100; i++) {\n    const letter = document.createElement('span');\n    const randomLetter = letters[Math.floor(Math.random() * letters.length)];\n    const randomLeft = Math.random() * 100;\n    const randomFontSize = Math.floor(Math.random() * 30) + 10;\n    const randomDuration = Math.random() * 4 + 2;\n\n    letter.classList.add('rain-letter');\n    letter.innerText = randomLetter;\n    letter.style.left = `${randomLeft}%`;\n    letter.style.fontSize = `${randomFontSize}px`;\n    letter.style.animationDuration = `${randomDuration}s`;\n\n    container.appendChild(letter);\n  }\n}\n\ncreateRain();"
+	  },
+	
+	{
+		"name": "Space Background",
+		"description": "Static stars shimmer at random intervals, while frequent shooting stars move in random directions with fading trails.",
+		"html": "<div class=\"star-container\"></div>",
+		"css": "@keyframes shimmer {\n  0%, 100% { opacity: 0.7; transform: scale(1); }\n  50% { opacity: 1; transform: scale(1.2); }\n}\n\n@keyframes shootingStar {\n  0% { opacity: 1; transform: translate(0, 0) scale(1); }\n  100% { opacity: 0; transform: translate(var(--x-direction), var(--y-direction)) scale(0.5); }\n}\n\n.star-container {\n  position: relative;\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #000;\n}\n\n.star {\n  position: absolute;\n  width: 3px;\n  height: 3px;\n  background-color: #fff;\n  border-radius: 50%;\n  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);\n  animation: shimmer 3s ease-in-out infinite;\n}\n\n.shooting-star {\n  position: absolute;\n  width: 8px;\n  height: 8px;\n  background-color: rgba(255, 255, 0, 0.8);\n  border-radius: 50%;\n  box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 0.5);\n  animation: shootingStar linear infinite;\n}",
+		"js": "function createStars() {\n  const container = document.querySelector('.star-container');\n\n  // Create shimmering stars\n  for (let i = 0; i < 100; i++) {\n    const star = document.createElement('div');\n    const randomLeft = Math.random() * 100;\n    const randomTop = Math.random() * 100;\n    const randomSize = Math.random() * 2 + 1;\n    const randomDelay = Math.random() * 3; // Random delay between 0 and 3 seconds\n\n    star.classList.add('star');\n    star.style.left = `${randomLeft}vw`;\n    star.style.top = `${randomTop}vh`;\n    star.style.width = `${randomSize}px`;\n    star.style.height = `${randomSize}px`;\n    star.style.animationDelay = `${randomDelay}s`;\n\n    container.appendChild(star);\n  }\n\n  // Create frequent shooting stars with random directions and trails\n  setInterval(() => {\n    const shootingStar = document.createElement('div');\n    const randomLeft = Math.random() * 100;\n    const randomTop = Math.random() * 100;\n    const randomXDirection = (Math.random() - 0.5) * 200 + 'vw'; // Random horizontal direction\n    const randomYDirection = (Math.random() - 0.5) * 200 + 'vh'; // Random vertical direction\n    const randomDuration = Math.random() * 2 + 1;\n\n    shootingStar.classList.add('shooting-star');\n    shootingStar.style.left = `${randomLeft}vw`;\n    shootingStar.style.top = `${randomTop}vh`;\n    shootingStar.style.setProperty('--x-direction', randomXDirection);\n    shootingStar.style.setProperty('--y-direction', randomYDirection);\n    shootingStar.style.animationDuration = `${randomDuration}s`;\n\n    container.appendChild(shootingStar);\n\n    // Remove shooting star after animation ends\n    setTimeout(() => shootingStar.remove(), randomDuration * 1000);\n  }, 1000); // Increased frequency of shooting stars\n}\n\ncreateStars();"
+	  },	  
+	  {
+		"name": "Bubble Float Background",
+		"description": "Bubbles float upward, changing sizes and fading as they rise.",
+		"html": "<div class=\"bubble-container\"></div>",
+		"css": "@keyframes floatUp {\n  0% { transform: translateY(100vh) scale(0.5); opacity: 0.8; }\n  100% { transform: translateY(-10%) scale(1.2); opacity: 0; }\n}\n\n.bubble-container {\n  position: relative;\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #003366;\n}\n\n.bubble {\n  position: absolute;\n  width: 20px;\n  height: 20px;\n  background-color: rgba(255, 255, 255, 0.5);\n  border-radius: 50%;\n  animation: floatUp linear infinite;\n}\n",
+		"js": "function createBubbles() {\n  const container = document.querySelector('.bubble-container');\n\n  for (let i = 0; i < 100; i++) {\n    const bubble = document.createElement('div');\n    const randomLeft = Math.random() * 100;\n    const randomSize = Math.random() * 20 + 10;\n    const randomDuration = Math.random() * 3 + 2;\n    const randomDelay = Math.random() * 3;\n\n    bubble.classList.add('bubble');\n    bubble.style.left = `${randomLeft}%`;\n    bubble.style.width = `${randomSize}px`;\n    bubble.style.height = `${randomSize}px`;\n    bubble.style.animationDuration = `${randomDuration}s`;\n    bubble.style.animationDelay = `${randomDelay}s`;\n\n    container.appendChild(bubble);\n  }\n}\n\ncreateBubbles();"
+	  },		  
+	  {
+		"name": "Snowfall Background",
+		"description": "Snowflakes gently fall from the top with varying sizes and speeds.",
+		"html": "<div class=\"snow-container\"></div>",
+		"css": "@keyframes snowfall {\n  0% { transform: translateY(-10%) translateX(0); opacity: 1; }\n  100% { transform: translateY(110vh) translateX(-10%); opacity: 0; }\n}\n\n.snow-container {\n  position: relative;\n  width: 100%;\n  height: 100vh;\n  overflow: hidden;\n  background-color: #000;\n}\n\n.snowflake {\n  position: absolute;\n  color: #fff;\n  font-size: 12px;\n  animation: snowfall linear infinite;\n}\n",
+		"js": "function createSnow() {\n  const container = document.querySelector('.snow-container');\n  const snowflakes = '❄❅❆'.split('');\n\n  for (let i = 0; i < 100; i++) {\n    const flake = document.createElement('span');\n    const randomFlake = snowflakes[Math.floor(Math.random() * snowflakes.length)];\n    const randomLeft = Math.random() * 100;\n    const randomSize = Math.random() * 10 + 10;\n    const randomDuration = Math.random() * 3 + 3;\n\n    flake.classList.add('snowflake');\n    flake.innerText = randomFlake;\n    flake.style.left = `${randomLeft}%`;\n    flake.style.fontSize = `${randomSize}px`;\n    flake.style.animationDuration = `${randomDuration}s`;\n\n    container.appendChild(flake);\n  }\n}\n\ncreateSnow();"
+	  },
+	  {
+		"name": "Ripple Waves Background",
+		"description": "Circles ripple out from the center, fading as they expand.",
+		"html": "<div class=\"ripple-container\"></div>",
+		"css": "@keyframes ripple {\n  0% { transform: scale(0.1); opacity: 0.8; }\n  100% { transform: scale(2); opacity: 0; }\n}\n\n.ripple-container {\n  position: relative;\n  width: 100%;\n  height: 100vh;\n  background-color: #1a1a2e;\n  overflow: hidden;\n}\n\n.ripple {\n  position: absolute;\n  width: 20px;\n  height: 20px;\n  background-color: rgba(255, 255, 255, 0.3);\n  border-radius: 50%;\n  animation: ripple linear infinite;\n}\n",
+		"js": "function createRipples() {\n  const container = document.querySelector('.ripple-container');\n\n  for (let i = 0; i < 30; i++) {\n    const ripple = document.createElement('div');\n    const randomLeft = Math.random() * 100;\n    const randomTop = Math.random() * 100;\n    const randomDuration = Math.random() * 2 + 3;\n\n    ripple.classList.add('ripple');\n    ripple.style.left = `${randomLeft}%`;\n    ripple.style.top = `${randomTop}%`;\n    ripple.style.animationDuration = `${randomDuration}s`;\n\n    container.appendChild(ripple);\n  }\n}\n\ncreateRipples();"
+	  },  
+	  {
+		"name": "Sliding Toggle Animation",
+		"description": "A sliding toggle that moves from left to right with a smooth animation when switched on.",
+		"html": "<label class=\"switch\">\n  <input type=\"checkbox\">\n  <span class=\"slider\"></span>\n</label>",
+		"css": ".switch {\n  position: relative;\n  display: inline-block;\n  width: 60px;\n  height: 34px;\n}\n\n.switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  transition: 0.4s;\n  border-radius: 34px;\n}\n\n.slider:before {\n  position: absolute;\n  content: \"\";\n  height: 26px;\n  width: 26px;\n  border-radius: 50%;\n  left: 4px;\n  bottom: 4px;\n  background-color: white;\n  transition: 0.4s;\n}\n\ninput:checked + .slider {\n  background-color: #4CAF50;\n}\n\ninput:checked + .slider:before {\n  transform: translateX(26px);\n}"
+	  },
+	  {
+		"name": "Glow Toggle Animation",
+		"description": "A toggle with a glowing effect on the slider when it's in the 'on' state.",
+		"html": "<label class=\"glow-switch\">\n  <input type=\"checkbox\">\n  <span class=\"glow-slider\"></span>\n</label>",
+		"css": ".glow-switch {\n  position: relative;\n  display: inline-block;\n  width: 60px;\n  height: 34px;\n}\n\n.glow-switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.glow-slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  transition: 0.4s;\n  border-radius: 34px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);\n}\n\n.glow-slider:before {\n  position: absolute;\n  content: \"\";\n  height: 26px;\n  width: 26px;\n  border-radius: 50%;\n  left: 4px;\n  bottom: 4px;\n  background-color: white;\n  transition: 0.4s;\n}\n\ninput:checked + .glow-slider {\n  background-color: #4CAF50;\n  box-shadow: 0 0 15px 5px rgba(76, 175, 80, 0.6);\n}\n\ninput:checked + .glow-slider:before {\n  transform: translateX(26px);\n}"
+	  },
+	  {
+		"name": "Slide and Flip Toggle Animation",
+		"description": "A toggle that combines both a sliding and flipping effect when switched on.",
+		"html": "<label class=\"flip-switch\">\n  <input type=\"checkbox\">\n  <span class=\"flip-slider\"></span>\n</label>",
+		"css": ".flip-switch {\n  position: relative;\n  display: inline-block;\n  width: 60px;\n  height: 34px;\n}\n\n.flip-switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.flip-slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  transition: 0.4s;\n  border-radius: 34px;\n}\n\n.flip-slider:before {\n  position: absolute;\n  content: \"\";\n  height: 26px;\n  width: 26px;\n  border-radius: 50%;\n  left: 4px;\n  bottom: 4px;\n  background-color: white;\n  transition: 0.4s;\n  transform-origin: center;\n}\n\ninput:checked + .flip-slider {\n  background-color: #f39c12;\n}\n\ninput:checked + .flip-slider:before {\n  transform: translateX(26px) rotate(180deg);\n}"
+	  },
+
+
+
+	  {
+		"name": "dropdownFade",
+		"html": "<div class=\"animation-dropdownFade\">\n  <button class=\"dropdown-btn\">Toggle</button>\n  <div class=\"dropdown-content\">\n    <p>Item 1</p>\n    <p>Item 2</p>\n    <p>Item 3</p>\n  </div>\n</div>",
+		"css": ".animation-dropdownFade {\n  position: relative;\n  display: inline-block;\n}\n\n.dropdown-btn {\n  padding: 10px 15px;\n  background-color: #3498db;\n  color: white;\n  border: none;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.dropdown-content {\n  display: none;\n  position: absolute;\n  background-color: #f9f9f9;\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\n  z-index: 1;\n  border-radius: 5px;\n  padding: 10px;\n  animation: fadeDropdown 0.5s ease-in-out;\n}\n\n.dropdown-content p {\n  margin: 0;\n  padding: 8px;\n  cursor: pointer;\n}\n\n.dropdown-content p:hover {\n  background-color: #e0e0e0;\n}\n\n@keyframes fadeDropdown {\n  from {\n    opacity: 0;\n    transform: translateY(-10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}",
+		"js": "document.querySelector('.animation-dropdownFade .dropdown-btn').addEventListener('click', function () {\n  const dropdown = this.nextElementSibling;\n  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';\n});",
+		"description": "A dropdown menu with a fade-in animation."
+	  },
+	  {
+		"name": "dropdownSlideDown",
+		"html": "<div class=\"animation-dropdownSlideDown\">\n  <button class=\"dropdown-btn\">Toggle</button>\n  <div class=\"dropdown-content\">\n    <p>Item 1</p>\n    <p>Item 2</p>\n    <p>Item 3</p>\n  </div>\n</div>",
+		"css": ".animation-dropdownSlideDown {\n  position: relative;\n  display: inline-block;\n}\n\n.dropdown-btn {\n  padding: 10px 15px;\n  background-color: #2ecc71;\n  color: white;\n  border: none;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.dropdown-content {\n  display: none;\n  position: absolute;\n  background-color: #f9f9f9;\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\n  z-index: 1;\n  border-radius: 5px;\n  padding: 10px;\n  animation: slideDropdown 0.5s ease-in-out;\n}\n\n.dropdown-content p {\n  margin: 0;\n  padding: 8px;\n  cursor: pointer;\n}\n\n.dropdown-content p:hover {\n  background-color: #e0e0e0;\n}\n\n@keyframes slideDropdown {\n  from {\n    transform: translateY(-20px);\n    opacity: 0;\n  }\n  to {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}",
+		"js": "document.querySelector('.animation-dropdownSlideDown .dropdown-btn').addEventListener('click', function () {\n  const dropdown = this.nextElementSibling;\n  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';\n});",
+		"description": "A dropdown menu with a slide-down animation."
+	  },
+	  {
+		"name": "dropdownExpand",
+		"html": "<div class=\"animation-dropdownExpand\">\n  <button class=\"dropdown-btn\">Toggle</button>\n  <div class=\"dropdown-content\">\n    <p>Item 1</p>\n    <p>Item 2</p>\n    <p>Item 3</p>\n  </div>\n</div>",
+		"css": ".animation-dropdownExpand {\n  position: relative;\n  display: inline-block;\n}\n\n.dropdown-btn {\n  padding: 10px 15px;\n  background-color: #e74c3c;\n  color: white;\n  border: none;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.dropdown-content {\n  display: none;\n  position: absolute;\n  background-color: #f9f9f9;\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\n  z-index: 1;\n  border-radius: 5px;\n  padding: 10px;\n  animation: expandDropdown 0.5s ease-in-out;\n  transform-origin: top center;\n}\n\n.dropdown-content p {\n  margin: 0;\n  padding: 8px;\n  cursor: pointer;\n}\n\n.dropdown-content p:hover {\n  background-color: #e0e0e0;\n}\n\n@keyframes expandDropdown {\n  from {\n    transform: scaleY(0);\n    opacity: 0;\n  }\n  to {\n    transform: scaleY(1);\n    opacity: 1;\n  }\n}",
+		"js": "document.querySelector('.animation-dropdownExpand .dropdown-btn').addEventListener('click', function () {\n  const dropdown = this.nextElementSibling;\n  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';\n});",
+		"description": "A dropdown menu with an expand animation."
+	  },
+	  {
+		"name": "dropdownZoom",
+		"html": "<div class=\"animation-dropdownZoom\">\n  <button class=\"dropdown-btn\">Zoom Menu</button>\n  <div class=\"dropdown-content\">\n    <p>Option A</p>\n    <p>Option B</p>\n    <p>Option C</p>\n  </div>\n</div>",
+		"css": ".animation-dropdownZoom {\n  position: relative;\n  display: inline-block;\n}\n\n.dropdown-btn {\n  padding: 12px 20px;\n  background-color: #9b59b6;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  cursor: pointer;\n  font-size: 1rem;\n}\n\n.dropdown-content {\n  display: none;\n  position: absolute;\n  background-color: #fefefe;\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\n  z-index: 1;\n  border-radius: 10px;\n  padding: 15px;\n  animation: zoomDropdown 0.4s ease-in-out;\n  transform-origin: top center;\n}\n\n.dropdown-content p {\n  margin: 0;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 0.9rem;\n}\n\n.dropdown-content p:hover {\n  background-color: #f0f0f0;\n}\n\n@keyframes zoomDropdown {\n  from {\n    transform: scale(0);\n    opacity: 0;\n  }\n  to {\n    transform: scale(1);\n    opacity: 1;\n  }\n}",
+		"js": "document.querySelector('.animation-dropdownZoom .dropdown-btn').addEventListener('click', function () {\n  const dropdown = this.nextElementSibling;\n  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';\n});",
+		"description": "A dropdown menu with a zoom-in animation."
+	  },
+	  {
+		"name": "dropdownFlip",
+		"html": "<div class=\"animation-dropdownFlip\">\n  <button class=\"dropdown-btn\">Flip Menu</button>\n  <div class=\"dropdown-content\">\n    <p>Option 1</p>\n    <p>Option 2</p>\n    <p>Option 3</p>\n  </div>\n</div>",
+		"css": ".animation-dropdownFlip {\n  position: relative;\n  display: inline-block;\n}\n\n.dropdown-btn {\n  padding: 10px 15px;\n  background-color: #e67e22;\n  color: white;\n  border: none;\n  border-radius: 5px;\n  font-size: 1rem;\n  cursor: pointer;\n}\n\n.dropdown-content {\n  display: none;\n  position: absolute;\n  background-color: #ffffff;\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\n  z-index: 1;\n  border-radius: 5px;\n  padding: 10px;\n  animation: flipDropdown 0.6s ease-out;\n  transform-origin: top center;\n}\n\n.dropdown-content p {\n  margin: 0;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 0.85rem;\n}\n\n.dropdown-content p:hover {\n  background-color: #fafafa;\n}\n\n@keyframes flipDropdown {\n  from {\n    transform: rotateX(-90deg);\n    opacity: 0;\n  }\n  to {\n    transform: rotateX(0deg);\n    opacity: 1;\n  }\n}",
+		"js": "document.querySelector('.animation-dropdownFlip .dropdown-btn').addEventListener('click', function () {\n  const dropdown = this.nextElementSibling;\n  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';\n});",
+		"description": "A dropdown menu with a flip-down animation."
+	  },
+	  {
+		"name": "dropdownBounce",
+		"html": "<div class=\"animation-dropdownBounce\">\n  <button class=\"dropdown-btn\">Bounce Menu</button>\n  <div class=\"dropdown-content\">\n    <p>Choice 1</p>\n    <p>Choice 2</p>\n    <p>Choice 3</p>\n  </div>\n</div>",
+		"css": ".animation-dropdownBounce {\n  position: relative;\n  display: inline-block;\n}\n\n.dropdown-btn {\n  padding: 10px 20px;\n  background-color: #16a085;\n  color: white;\n  border: none;\n  border-radius: 5px;\n  font-size: 1.2rem;\n  cursor: pointer;\n}\n\n.dropdown-content {\n  display: none;\n  position: absolute;\n  background-color: #ffffff;\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\n  z-index: 1;\n  border-radius: 8px;\n  padding: 12px;\n  animation: bounceDropdown 0.5s ease-in-out;\n}\n\n.dropdown-content p {\n  margin: 0;\n  padding: 10px;\n  cursor: pointer;\n  font-size: 1rem;\n}\n\n.dropdown-content p:hover {\n  background-color: #eaeaea;\n}\n\n@keyframes bounceDropdown {\n  0% {\n    transform: translateY(-30px);\n    opacity: 0;\n  }\n  50% {\n    transform: translateY(10px);\n    opacity: 1;\n  }\n  100% {\n    transform: translateY(0);\n  }\n}",
+		"js": "document.querySelector('.animation-dropdownBounce .dropdown-btn').addEventListener('click', function () {\n  const dropdown = this.nextElementSibling;\n  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';\n});",
+		"description": "A dropdown menu with a bounce-in animation."
+	  }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+	  
+	  
+	  
+	  
+	  
+	  
+						
+	
+	  
+
+	  
+	  
+	  
+	  
+	  
+  ]
+  

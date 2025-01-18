@@ -1,0 +1,259 @@
+.advanced-container {
+	padding: 20px;
+	background-color: #f9f9f9;
+  }
+  
+  h2 {
+	text-align: center;
+	font-size: 2em;
+	margin: 0; 
+	margin-top: 60px; 
+
+  }
+  #componentDesc{
+	color: grey;
+	font-size: 1.5em
+  }
+  
+  .animations-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible grid with equal gap */
+	gap: 10px; /* Equal gap between items */
+	justify-items: flex-start;
+	width: 15%;
+	min-width: 15%;
+	max-height: 70vh;
+	overflow-y: scroll;
+	margin: 0 auto; 
+	padding: 20px; 
+  }
+
+  .tab-toggle {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	margin-bottom: 20px;
+  }
+  
+  .tab-toggle button {
+	padding: 10px 20px;
+	background-color: #f0f0f0;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	font-size: 1.1em;
+	cursor: pointer;
+	transition: all 0.3s ease;
+  }
+
+  .tab-toggle > button > img {
+
+	width: 50px;
+	height: 50px;
+  }
+
+  
+  .tab-toggle button:hover {
+	background-color: #e0e0e0;
+	border-color: #bbb;
+  }
+  
+  .tab-toggle button.active {
+	background-color: #007bff;
+	color: white;
+	border-color: #007bff;
+	font-weight: bold;
+  }
+
+  
+  .tab-toggle button:focus {
+	outline: none; /* Removes the default focus outline */
+	box-shadow: 0 0 3px 2px rgba(0, 123, 255, 0.5); /* Focus ring for accessibility */
+  }
+  
+  
+  .animation-item {
+	width: 100%; /* Ensure it takes the full width of the grid cell */
+	padding: 0px;
+	margin: 0px;
+	background: #fff;
+	border: 1px solid #ccc;
+	text-align: center;
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.3s ease;
+	border-radius: 10px; /* Adding border radius */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .animation-item:hover {
+	transform: scale(1.05);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a slight shadow on hover */
+  }
+  
+  .animation-box {
+	margin-top: 20px;
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #ccc;
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+  }
+
+  #animation-list-and-display {
+	display: flex;
+	flex-direction: row;
+	/* Additional styling for row layout */
+  }
+  
+  @media (max-width: 1268px) {
+	#animation-list-and-display {
+	  flex-direction: column;
+	}
+	.animations-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible grid with equal gap */
+		gap: 10px; /* Equal gap between items */
+		justify-items: flex-start;
+		width: 100%;
+		max-height: 20vh;
+		overflow-y: scroll;
+		margin: 20px auto; 
+		padding: 20px; 
+		box-sizing: border-box;
+	  }
+	  .animation-box {
+		margin-top: 20px;
+		background: #fff;
+		padding: 20px;
+		border: 1px solid #ccc;
+		display: flex;
+		flex-direction: row;
+		box-sizing: border-box;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	  }
+	  #animation-code {
+		width: 100%;
+		min-width: 100%; 
+	  }
+
+	  .animation-render-box {
+
+		background-color: #eee;
+		text-align: center;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 100%; 
+		box-sizing: border-box;
+	  }
+	  .pre-box {
+		background-color: #f4f4f4;
+		padding: 10px;
+		border-radius: 5px;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		height: auto;
+		min-height: none;
+	  }
+	  .html-preview, .css-preview, .js-preview {
+		height: auto;
+	  }
+	  
+  }
+  
+  
+  h3 {
+	font-size: 1em;
+	margin: 10px;
+  }
+  
+  .pre-box {
+	background-color: #f4f4f4;
+	padding: 10px;
+	border-radius: 5px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	height: 350px;
+  }
+  
+  .animation-render-box {
+	border-radius: 5px;
+
+	margin-top: 20px;
+	padding: 20px;
+	background-color: #eee;
+	text-align: center;
+	width: 47%;
+	margin-left: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  #animation-code {
+	width: 48%;
+  }
+  
+  /* Hide the default radio button */
+  .category-filter input[type="radio"] {
+	display: none;
+  }
+
+  .category-filter {
+	max-width: 70%;
+	margin: 0 auto; 
+  }
+  
+  /* Style the label to look like a button */
+  .category-filter label {
+	display: inline-block;
+	margin: 5px;
+	padding: 8px 12px;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  /* Change the background color when selected */
+  .category-filter input[type="radio"]:checked + label {
+	background-color: #007bff;
+	color: white;
+  }
+  
+  /* Hover effect for the label */
+  .category-filter label:hover {
+	background-color: #e0e0e0;
+  }
+  
+  /* Active state (when the radio is selected) */
+  .category-filter input[type="radio"]:checked + label {
+	background-color: #007bff;
+	color: white;
+  }
+  
+  .html-preview, .css-preview, .js-preview {
+	height: 350px;
+  }
+  
+  .animationName {
+	font-size: 2em; /* Slightly larger font for the animation name */
+	font-weight: bold;
+	color: #333; /* Dark text for better contrast */
+	font-style: italic;
+	padding: 0; 
+	margin: 0; 
+  }
+  
+  .animationDesc {
+	font-size: 1.1em; /* Slightly smaller font for the description */
+	color: #555; /* Lighter grey color for description text */
+	line-height: 1.5; /* Improve readability with some line height */
+  }
+  

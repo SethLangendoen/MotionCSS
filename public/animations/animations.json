@@ -13,6 +13,60 @@
 				"content": "This is a slide-in animation"
 			  },
 			  {
+				"name": "snappingSlide",
+				"type": "advanced",
+				"keyframes": "0% { transform: translateX(-100%) scale(0.5); opacity: 0; } 25% { transform: translateX(-50%) scale(0.75); opacity: 0.3; } 50% { transform: translateX(0) scale(1.05); opacity: 0.6; } 75% { transform: translateX(10%) scale(1.1); opacity: 0.9; } 100% { transform: translateX(0) scale(1); opacity: 1; }",
+				"duration": "1.8s",
+				"timingFunction": "ease-in-out",
+				"iterationCount": "1",
+				"content": "Slide with snapping effect and multiple scaling steps"
+			  },
+			  {
+				"name": "zoomBlurSlide",
+				"type": "advanced",
+				"keyframes": "0% { transform: translateX(-100%) scale(0.5); filter: blur(10px); opacity: 0; } 30% { transform: translateX(30%) scale(0.8); filter: blur(6px); opacity: 0.4; } 70% { transform: translateX(-10%) scale(1.05); filter: blur(2px); opacity: 0.8; } 100% { transform: translateX(0) scale(1); filter: blur(0); opacity: 1; }",
+				"duration": "1.5s",
+				"timingFunction": "ease-in-out",
+				"iterationCount": "1",
+				"content": "Slide with zoom effect and blur"
+			  },			  
+			  {
+				"name": "distortSlide",
+				"type": "advanced",
+				"keyframes": "0% { transform: translateX(-100%) skewX(20deg) scale(1.5); filter: blur(10px); opacity: 0; } 30% { transform: translateX(10%) skewX(10deg) scale(1.2); filter: blur(5px); opacity: 0.3; } 60% { transform: translateX(20%) skewX(-5deg) scale(1); filter: blur(2px); opacity: 0.7; } 100% { transform: translateX(0) skewX(0) scale(1); filter: blur(0); opacity: 1; }",
+				"duration": "2s",
+				"timingFunction": "ease-in-out",
+				"iterationCount": "1",
+				"content": "Slide with distortion, blur, and fade"
+			  },
+			  {
+				"name": "parallaxSlide",
+				"type": "advanced",
+				"keyframes": "0% { transform: translateX(-100%) translateY(0); opacity: 0; } 33% { transform: translateX(-50%) translateY(-20%) scale(1.1); opacity: 0.5; } 66% { transform: translateX(0) translateY(10%) scale(0.9); opacity: 0.8; } 100% { transform: translateX(0) translateY(0) scale(1); opacity: 1; }",
+				"duration": "2.5s",
+				"timingFunction": "ease-in-out",
+				"iterationCount": "1",
+				"content": "Triple parallax effect with sliding and scaling"
+			  },	
+			  {
+				"name": "bouncySlide",
+				"type": "advanced",
+				"keyframes": "0% { transform: translateX(-100%) scale(0.6); opacity: 0; } 40% { transform: translateX(30%) scale(1.2); opacity: 0.5; } 60% { transform: translateX(-10%) scale(1.1); opacity: 0.8; } 80% { transform: translateX(5%) scale(1); opacity: 0.9; } 100% { transform: translateX(0) scale(1); opacity: 1; }",
+				"duration": "1.8s",
+				"timingFunction": "ease-in-out",
+				"iterationCount": "1",
+				"content": "Bouncy sliding with scaling and opacity change"
+			  },
+			  {
+				"name": "spiralSlide",
+				"type": "advanced",
+				"keyframes": "0% { transform: translateX(-100%) rotate(-720deg) scale(0); opacity: 0; } 40% { transform: translateY(-30%) rotate(-360deg) scale(0.7); opacity: 0.5; } 70% { transform: translateY(30%) rotate(180deg) scale(1.2); opacity: 0.9; } 100% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }",
+				"duration": "2s",
+				"timingFunction": "ease-in-out",
+				"iterationCount": "1",
+				"content": "A spiral motion with scale and rotation"
+			  },																  
+			  {
 				"name": "slideInLeftFade",
 				"type": "creative",
 				"keyframes": "0% { transform: translateX(-100%); opacity: 0; } 100% { transform: translateX(0); opacity: 1; }",

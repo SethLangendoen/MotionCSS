@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import '../../CSS/Blogs.css';  // Import your CSS for styling
+import BlogList from './BlogList';
 
 const BlogPage = () => {
   const { slug } = useParams();  // Get the blog slug from the URL
@@ -65,14 +66,15 @@ const BlogPage = () => {
       </Helmet>
 
       <div className="blog-content scaleFadeSlideInUp">
-        <button
+
+        {/* <button
           onClick={handleBackClick}
           className={`back-button ${hovered ? 'borderBoxShadowShake' : ''}`}
           onMouseEnter={() => setHovered(true)} // Add hover class on mouse enter
           onMouseLeave={() => setHovered(false)} // Remove hover class on mouse leave
         >
           Back
-        </button>
+        </button> */}
         <h2>{blog.title}</h2>
         <div dangerouslySetInnerHTML={{ __html: blog.content }} />
       </div>
